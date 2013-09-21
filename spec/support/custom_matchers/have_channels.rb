@@ -1,4 +1,4 @@
-# Test number of channels in audio file. Based on +sox+ command line tool.
+# Test number of channels in audio file. Based on +soxi+ command line tool.
 #
 # @example
 #   "highway_to_hell.mp3".should have_channels(2)
