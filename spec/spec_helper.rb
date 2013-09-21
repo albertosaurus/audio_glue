@@ -1,6 +1,10 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require 'rspec'
+require 'chromaprint'
+require 'pry'
+
 require 'audio_glue'
 
 # Requires supporting files with custom matchers and macros, etc,
@@ -11,7 +15,6 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 FIXTURES_PATH = File.expand_path('../integration/fixtures/', __FILE__)
 
 RSpec.configure do |config|
-
   # Generate filename for temporary file.
   #
   # @param ext [String] file extension
@@ -28,5 +31,13 @@ RSpec.configure do |config|
   # @return [String] path
   def fixture(filename)
     File.join(FIXTURES_PATH, filename)
+  end
+
+  def input_fixture(filename)
+    fixture(File.join('input', filename))
+  end
+
+  def output_fixture(filename)
+    fixture(File.join('output', filename))
   end
 end
