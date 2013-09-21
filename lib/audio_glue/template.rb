@@ -23,7 +23,7 @@ module AudioGlue
     end
 
     def file(file_path)
-      FileSnippet.new(file_path)
+      Snippet.new(:file, file_path)
     end
 
     def build(snippet_packet)
