@@ -26,6 +26,10 @@ module AudioGlue
       Snippet.new(:file, file_path)
     end
 
+    def url(remote_url)
+      Snippet.new(:url, remote_url)
+    end
+
     def build(snippet_packet)
       raise NotImplementedError, __method__
     end
