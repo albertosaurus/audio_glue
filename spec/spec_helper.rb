@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rspec'
 require 'chromaprint'
+require 'webmock/rspec'
 require 'pry'
 
 require 'audio_glue'
