@@ -2,11 +2,15 @@ module AudioGlue
   class Template
 
     class << self
-      attr_accessor :rate, :channels
+      attr_accessor :format, :rate, :channels
     end
 
     def rate
       self.class.rate
+    end
+
+    def format
+      self.class.format
     end
 
     def channels

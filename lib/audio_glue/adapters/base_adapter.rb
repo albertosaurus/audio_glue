@@ -17,13 +17,6 @@ module AudioGlue
       @snippet_packet = snippet_packet
     end
 
-    # Build audio file and write result into file.
-    #
-    # @return [void]
-    def write(file)
-      raise AbstractMethodCallError, __method__
-    end
-
     # Build audio file and return result as binary string.
     #
     # @return [String]

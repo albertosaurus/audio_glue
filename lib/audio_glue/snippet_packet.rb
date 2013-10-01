@@ -3,9 +3,10 @@ module AudioGlue
     extend Forwardable
     def_delegators :@snippets, :<<
 
-    attr_reader :rate, :channels, :snippets
+    attr_reader :format, :rate, :channels, :snippets
 
-    def initialize(rate, channels)
+    def initialize(format, rate, channels)
+      @format   = format
       @rate     = rate
       @channels = channels
       @snippets = []

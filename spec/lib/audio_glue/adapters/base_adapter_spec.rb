@@ -10,13 +10,6 @@ describe AudioGlue::BaseAdapter do
     end
   end
 
-  describe '#write' do
-    it 'should raise AbstractMethodCallError' do
-      expect { adapter.write('/file/path') }.
-        to raise_error(AudioGlue::AbstractMethodCallError, 'write')
-    end
-  end
-
   describe '#build' do
     it 'should raise AbstractMethodCallError' do
       expect { adapter.build }.

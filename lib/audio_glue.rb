@@ -1,6 +1,8 @@
 require 'sox'
 
 require 'forwardable'
+require 'fileutils'
+require 'tempfile'
 
 require 'audio_glue/snippet'
 require 'audio_glue/snippet_packet'
