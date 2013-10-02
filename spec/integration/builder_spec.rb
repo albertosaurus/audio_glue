@@ -7,23 +7,24 @@ describe 'AudioGlue::Builder integration' do
   context 'Template with local files' do
     let(:template_class) do
       Class.new(AudioGlue::Template) do
-        self.format   = 'wav'
-        self.rate     = 96000
-        self.channels = 1
+        head do
+          format 'wav'
+          rate 9600
+          channels 1
+        end
 
-        attr_accessor :smalltalk
+        content do
+          - file(input_fixture('hi.wav'))
+          - file(input_fixture('hi.wav'))
 
-        def build(packet)
-          packet << file(input_fixture('hi.wav'))
-          packet << file(input_fixture('hi.wav'))
-
-          if smalltalk
-            packet << file(input_fixture('how_are_you_doing.wav'))
-            packet << file(input_fixture('fine_thanks.wav'))
+          if @smalltalk
+            - file(input_fixture('how_are_you_doing.wav'))
+            - file(input_fixture('fine_thanks.wav'))
           end
 
-          packet << file(input_fixture('bye_bye.wav'))
+          - file(input_fixture('bye_bye.wav'))
         end
+
       end
     end
 

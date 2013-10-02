@@ -1,40 +1,46 @@
 module AudioGlue
   class Template
+    extend Forwardable
+    def_delegators 'self.class', :format, :rate, :channels, :content_proc
 
     class << self
-      attr_accessor :format, :rate, :channels
-    end
+      attr_accessor :format, :rate, :channels, :path, :content_proc
 
-    def rate
-      self.class.rate
-    end
+      def head(&block)
+        HeadContext.new(self).instance_eval(&block)
+      end
 
-    def format
-      self.class.format
-    end
+      def content(&block)
+        self.content_proc = block
+      end
 
-    def channels
-      self.class.channels
-    end
-
-
-
-    def initialize(variables = {})
-      variables.each do |var, value|
-        self.send("#{var}=", value)
+      def inspect
+        if self.name
+          super
+        else
+          "<AudioGlue::Template(class)"
+        end
       end
     end
 
-    def file(file_path)
-      Snippet.new(:file, file_path)
+
+    def initialize(variables = {})
+      @variables = variables
     end
 
-    def url(remote_url)
-      Snippet.new(:url, remote_url)
+    def build_snippet_packet
+      packet = SnippetPacket.new(format, rate, channels)
+      context = ContentContext.new(packet, @variables)
+      context.instance_eval(&content_proc)
+      packet
     end
 
-    def build(snippet_packet)
-      raise NotImplementedError, __method__
+    def inspect
+      if self.class.name
+        super
+      else
+        "<AudioGlue::Template(instance)"
+      end
     end
   end
 end

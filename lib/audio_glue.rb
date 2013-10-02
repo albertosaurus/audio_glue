@@ -6,6 +6,9 @@ require 'tempfile'
 
 require 'audio_glue/snippet'
 require 'audio_glue/snippet_packet'
+
+require 'audio_glue/template/head_context'
+require 'audio_glue/template/content_context'
 require 'audio_glue/template'
 
 require 'audio_glue/adapters/base_adapter'

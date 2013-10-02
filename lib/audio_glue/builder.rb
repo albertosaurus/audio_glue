@@ -12,15 +12,10 @@ module AudioGlue
     #
     # @return [String]
     def build(template)
-      packet  = build_snippet_packet(template)
+      packet  = template.build_snippet_packet
       adapter = @adapter_class.new(packet)
       adapter.build
     end
 
-    def build_snippet_packet(template)
-      SnippetPacket.new(template.format, template.rate, template.channels).tap do |packet|
-        template.build(packet)
-      end
-    end
   end
 end
