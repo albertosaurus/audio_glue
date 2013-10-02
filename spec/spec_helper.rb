@@ -13,7 +13,7 @@ require 'audio_glue'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 
-FIXTURES_PATH = File.expand_path('../integration/fixtures/', __FILE__)
+FIXTURES_PATH = File.expand_path('../fixtures/', __FILE__)
 
 RSpec.configure do |config|
   # Generate filename for temporary file.
@@ -34,11 +34,15 @@ RSpec.configure do |config|
     File.join(FIXTURES_PATH, filename)
   end
 
+  def sound_fixture(filename)
+    fixture(File.join('sounds', filename))
+  end
+
   def input_fixture(filename)
-    fixture(File.join('input', filename))
+    sound_fixture(File.join('input', filename))
   end
 
   def output_fixture(filename)
-    fixture(File.join('output', filename))
+    sound_fixture(File.join('output', filename))
   end
 end
