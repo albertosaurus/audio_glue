@@ -2,14 +2,18 @@ require 'spec_helper'
 
 describe AudioGlue::Template do
   describe '#new' do
-    it 'should set instance variables from hash' do
-      template = described_class.new(:age => 23, :name => 'John Johnovich')
+    it 'should set variables from hash' do
+      template_class = Class.new(described_class) do
+        attr_accessor :age, :name
+      end
+
+      template = template_class.new(:age => 23, :name => 'John Johnovich')
 
       template.instance_variable_get('@age').should == 23
       template.instance_variable_get('@name').should == 'John Johnovich'
     end
-  end
 
+  end
   describe '#file' do
     it 'should build file snippet' do
       template = described_class.new

@@ -19,10 +19,9 @@ module AudioGlue
 
 
 
-
     def initialize(variables = {})
       variables.each do |var, value|
-        instance_variable_set("@#{var}", value)
+        self.send("#{var}=", value)
       end
     end
 

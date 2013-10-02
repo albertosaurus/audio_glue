@@ -11,11 +11,13 @@ describe 'AudioGlue::Builder integration' do
         self.rate     = 96000
         self.channels = 1
 
+        attr_accessor :smalltalk
+
         def build(packet)
           packet << file(input_fixture('hi.wav'))
           packet << file(input_fixture('hi.wav'))
 
-          if @smalltalk
+          if smalltalk
             packet << file(input_fixture('how_are_you_doing.wav'))
             packet << file(input_fixture('fine_thanks.wav'))
           end
