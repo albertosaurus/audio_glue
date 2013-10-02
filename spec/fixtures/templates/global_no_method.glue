@@ -7,5 +7,5 @@ head {
 # We don't support such syntax :)
 alien_is_here
 
-content {
+body {
 }

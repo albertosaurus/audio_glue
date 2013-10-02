@@ -1,6 +1,6 @@
 module AudioGlue
   class Template
-    class ContentContext
+    class BodyContext
       def initialize(packet, variables = {})
         @__packet__ = packet
 

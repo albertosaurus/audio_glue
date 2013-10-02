@@ -13,7 +13,7 @@ describe 'AudioGlue::Builder integration' do
           channels 1
         end
 
-        content do
+        body do
           - file(input_fixture('hi.wav'))
           - file(input_fixture('hi.wav'))
 

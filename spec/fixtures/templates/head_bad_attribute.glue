@@ -3,5 +3,5 @@ head {
   bad_attribute 110
 }
 
-content {
+body {
 }

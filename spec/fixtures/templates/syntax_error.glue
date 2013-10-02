@@ -4,7 +4,7 @@ head {
   channels 1
 }
 
-content {
+body {
 
 # Comment out closing brace, let's make the file be invalid
 # }

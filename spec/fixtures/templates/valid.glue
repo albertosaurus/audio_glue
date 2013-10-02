@@ -4,6 +4,6 @@ head {
   channels 1
 }
 
-content {
+body {
   # Let it be empty, since we don't build it
 }
