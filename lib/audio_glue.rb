@@ -16,6 +16,8 @@ require 'audio_glue/adapters/plain_sox_adapter'
 
 require 'audio_glue/builder'
 
+require 'audio_glue/template_loader'
+
 
 
 module AudioGlue
@@ -24,5 +26,9 @@ module AudioGlue
   end
 
   class AbstractMethodCallError < Error
+  end
+
+  # Can be raised on attempt to load glue template.
+  class LoadTemplateError < Error
   end
 end

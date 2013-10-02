@@ -1,0 +1,10 @@
+head {
+  format :mp3
+  rate 44100
+  channels 1
+}
+
+content {
+
+# Comment out closing brace, let's make the file be invalid
+# }

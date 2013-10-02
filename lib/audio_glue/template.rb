@@ -18,7 +18,9 @@ module AudioGlue
         if self.name
           super
         else
-          "<AudioGlue::Template(class)"
+          info = "<AudioGlue::Template(class)"
+          info << " path=#{path.inspect}" if path
+          info << ">"
         end
       end
     end

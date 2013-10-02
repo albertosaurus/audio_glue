@@ -1,0 +1,11 @@
+head {
+  format :mp3
+  rate 44100
+  channels 1
+}
+
+# We don't support such syntax :)
+alien_is_here
+
+content {
+}

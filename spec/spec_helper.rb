@@ -14,6 +14,8 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 
 FIXTURES_PATH = File.expand_path('../fixtures/', __FILE__)
+SOUND_FIXTURES_PATH = File.join(FIXTURES_PATH, 'sounds')
+TEMPLATE_FIXTURES_PATH = File.join(FIXTURES_PATH, 'templates')
 
 RSpec.configure do |config|
   # Generate filename for temporary file.
@@ -34,8 +36,12 @@ RSpec.configure do |config|
     File.join(FIXTURES_PATH, filename)
   end
 
+  def template_fixture(filename)
+    File.join(TEMPLATE_FIXTURES_PATH, filename)
+  end
+
   def sound_fixture(filename)
-    fixture(File.join('sounds', filename))
+    File.join(SOUND_FIXTURES_PATH, filename)
   end
 
   def input_fixture(filename)
