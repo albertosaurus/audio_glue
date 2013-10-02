@@ -31,10 +31,10 @@ module AudioGlue
     end
 
     def build_snippet_packet
-      packet = SnippetPacket.new(format, rate, channels)
-      body = BodyContext.new(packet, @variables)
-      body.instance_eval(&body_proc)
-      packet
+      SnippetPacket.new(format, rate, channels).tap do |packet|
+        body = BodyContext.new(packet, @variables)
+        body.instance_eval(&body_proc)
+      end
     end
 
     def inspect
