@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'ruby-sox', :path => '/home/blake/dev/work/tmx/ruby-sox'
+gem 'ruby-sox', :git => 'git@github.com:TMXCredit/ruby-sox.git'
 
 group :development do
   gem "bundler", "~> 1.0"

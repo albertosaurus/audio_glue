@@ -6,10 +6,11 @@ GIT
     chromaprint (0.0.0)
       ffi
 
-PATH
-  remote: /home/blake/dev/work/tmx/ruby-sox
+GIT
+  remote: git@github.com:TMXCredit/ruby-sox.git
+  revision: 3f6e51343e69f0e462a2455301b75c2b713923d2
   specs:
-    ruby-sox (0.0.0)
+    ruby-sox (0.0.1)
 
 GEM
   remote: http://rubygems.org/
