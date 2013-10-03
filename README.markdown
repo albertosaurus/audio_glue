@@ -24,7 +24,7 @@ brew install flac sox
 
 ## Usage
 
-There is small example:
+There is an example:
 
 ```ruby
 # Create a template class
@@ -38,10 +38,10 @@ class HelloWorldTemplate < AudioGlue::Template
 
   # Lets concatenate 2 mp3 files
   body do
-    - file('/sounds/hello.mp3')                              # Local file
+    - file("/sounds/hello.mp3")                              # Local file
 
     if @say_name
-      - url('http://some-service.com/my-name-is-glue.mp3')   # Remote file
+      - url("http://some-service.com/my-name-is-glue.mp3")   # Remote file
     end
   end
 end
@@ -57,7 +57,7 @@ builder = AudioGlue::Builder.new(adapter)
 audio = builder.build(template)  # => audio as a binary string
 
 # Write the result to a local file
-File.binwrite('/hello_world.mp3', audio)
+File.binwrite("/hello_world.mp3", audio)
 ```
 
 ### Templates
@@ -79,9 +79,9 @@ head {
 }
 
 body {
-  - file('/sounds/hello.mp3')
+  - file("/sounds/hello.mp3")
   if @say_name
-    - url('http://some-service.com/my-name-is-glue.mp3')
+    - url("http://some-service.com/my-name-is-glue.mp3")
   end
 }
 ```
@@ -90,10 +90,10 @@ And then we can load it with `AudioGlue::TemplateLoader`:
 
 ```ruby
 # Create instance of loader with basic directory, where templates are located
-loader = TemplateLoader.new('/path/to/templates')
+loader = TemplateLoader.new("/path/to/templates")
 
 # Load and cache the template
-loader.load('hello_world')  # => anonymous subclass of AudioGlue::Template
+loader.load("hello_world")  # => anonymous subclass of AudioGlue::Template
 ```
 
 ### Glue Syntax
@@ -102,35 +102,34 @@ Glue template has 2 sections:
 * `head` - contains parameters of output file (`format`, `rate`, `channels`).
 * `body` - specify how to build audio
 
-Body sets audio snippets which should be used to build an output.
-There two types of snippets:
-* `file` - points to an audio file in the file system
-* `url` - URL to a remote audio file
+Body contains audio snippets which should be used to build the audio.
+There few types of snippets:
+* `file` - points to an audio file in the local file system
+* `url` - contains a URL to a remote audio file
 
 To make a snippet be added to the output it should have a dash prefix (`-`).
-
-Anyway it's good to know that the syntax is a ruby DSL.
 
 
 ### Custom adapters
 
-You may want to create your own adapter which concatenates audio files if you think
-that existing one is not efficient or you wanna add some caching.
+You may want to create your own adapter which concatenates audio files, if you think
+the existing one is not efficient or you wanna add some caching.
 
 The responsibility of adapters is to build audio data from `AudioGlue::SnippetPacket`.
 Snippet packet is a collection of audio snippets and output file
 characteristics(format, rate, channels).
 
-The very simple adapter could look like this:
+A very simple adapter could look like this:
 
 ```ruby
 # Doesn't support :url snippets. Only files in local file system.
 # Doesn't handle rate and channels.
 class SimpleAdapter < AudioGlue::BaseAdapter
+  # Only this method is required to be implemented.
   def build
     # Extract file paths from snippets. Ensure only :file snippets are present.
     file_paths = @snippet_packet.snippets.map do |snippet|
-      raise AudioGlue::Error, "Only file snippets are supported" unless snippet.type == :file
+      raise(AudioGlue::Error, "Only file snippets are supported") unless snippet.type == :file
       snippets.location
     end
 
