@@ -1,6 +1,6 @@
 module AudioGlue
   class Snippet
-    attr_reader :type, :location
+    attr_reader :type, :location, :snippet_packet
 
     # @param type [Symbol] :file or :url
     # @param location [String] location of the file
