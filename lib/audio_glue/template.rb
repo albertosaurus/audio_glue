@@ -1,4 +1,40 @@
 module AudioGlue
+  # Audio templates.
+  # Every particular template is a subclass of {AudioGlue::Template}. Quite often
+  # the classes can be anonymous(that's why +inspect+ is redefined to provide more information).
+  #
+  # Template class owns +format+, +rate+, +channels+ and also a block which is used
+  # to create {AudioGlue::SnippetPacket} ("render" in term of view templates).
+  #
+  # Instances of templates differs from template classes with instance variables,
+  # which can be used in +body+ block.
+  #
+  # @example
+  #   class HiTemplate < AudioGlue::Template
+  #     # Output file information
+  #     head do
+  #       format :mo3
+  #       rate 22050
+  #       channels 2
+  #     end
+  #
+  #     # Block to "render" template
+  #     body do
+  #       - file('/hi.mp3')
+  #       if @with_smalltalk
+  #         - url('http://say.it/how-are-you.mp3')
+  #       end
+  #     end
+  #   end
+  #
+  #   # Create an instance of template. We wonder how our friend is doing so
+  #   # we pass ":with_smalltalk => true", to add a remote URL snippet.
+  #   template = HiTemplate.new(:with_smalltalk => true)
+  #
+  #   # Let's create a snippet packet
+  #   packet = template.build_snippet_packet => # <AudioGlue::SnippetPacket ..>
+  #   # Now we can pass a snippet packet to adapter to build output audio.
+  #
   class Template
     extend Forwardable
     def_delegators 'self.class', :format, :rate, :channels, :path, :body_proc

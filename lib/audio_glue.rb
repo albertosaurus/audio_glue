@@ -22,9 +22,12 @@ require 'audio_glue/template_loader'
 
 module AudioGlue
 
+  # Basic error for AudioGlue errors
   class Error < StandardError
   end
 
+  # Is raised on attempt to call not implemented method of object which class
+  # inherits from an abstract class.
   class AbstractMethodCallError < Error
   end
 
