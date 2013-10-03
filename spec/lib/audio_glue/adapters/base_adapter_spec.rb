@@ -1,13 +1,12 @@
 require 'spec_helper'
 
 describe AudioGlue::BaseAdapter do
-  let(:snippet_packet) { double(:snippet_packet)             }
-  let(:adapter)        { described_class.new(snippet_packet) }
+  let(:snippet_packet) { double(:snippet_packet) }
+  let(:adapter)        { described_class.new     }
 
-  describe '.new' do
-    it 'should initialize snippet_packet' do
-      adapter.snippet_packet.should == snippet_packet
-    end
+  it 'should have snippet_packet attribute' do
+    adapter.snippet_packet = snippet_packet
+    adapter.snippet_packet.should == snippet_packet
   end
 
   describe '#build' do

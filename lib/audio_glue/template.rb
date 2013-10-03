@@ -78,7 +78,7 @@ module AudioGlue
     end
 
 
-    # @params variables [Hash] hash of parameters which can be used as instance
+    # @param variables [Hash] hash of parameters which can be used as instance
     #   variables in +body+ statement of +.glue+ template.
     def initialize(variables = {})
       @variables = variables

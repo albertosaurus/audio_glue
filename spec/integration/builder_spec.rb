@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe 'AudioGlue::Builder integration' do
-  let(:output_file) { gen_tmp_filename('wav') }
-  let(:builder) { AudioGlue::Builder.new }
+  let(:output_file) { gen_tmp_filename('wav')         }
+  let(:adapter)     { AudioGlue::PlainSoxAdapter.new  }
+  let(:builder)     { AudioGlue::Builder.new(adapter) }
 
   context 'Template with local files' do
     let(:template_class) do

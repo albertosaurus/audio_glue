@@ -10,7 +10,7 @@ module AudioGlue
 
       # Set format of audio on template("mp3", "ogg", "wav", etc).
       #
-      # @param channels_value [Symbol, String]
+      # @param format_value [Symbol, String]
       #
       # @return [void]
       def format(format_value)
@@ -19,7 +19,7 @@ module AudioGlue
 
       # Set rate of audio on template.
       #
-      # @param channels_value [Integer, String]
+      # @param rate_value [Integer, String]
       #
       # @return [void]
       def rate(rate_value)

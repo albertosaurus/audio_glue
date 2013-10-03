@@ -9,13 +9,10 @@ module AudioGlue
   # Also adapter is responsible for correctly processing remote files(e.g.
   # downloading them as temporary files if necessary).
   class BaseAdapter
-    attr_reader :snippet_packet
 
-    # @param snippet_packet [AudioGlue::SnippetPacket] snippet packet which
+    # @attribute snippet_packet [AudioGlue::SnippetPacket] snippet packet which
     #   contains snippets that provide locations of audio sources.
-    def initialize(snippet_packet)
-      @snippet_packet = snippet_packet
-    end
+    attr_accessor :snippet_packet
 
     # Build audio file and return result as binary string.
     #
