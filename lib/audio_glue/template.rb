@@ -81,17 +81,18 @@ module AudioGlue
     # @param variables [Hash] hash of parameters which can be used as instance
     #   variables in +body+ statement of +.glue+ template.
     def initialize(variables = {})
-      @variables = variables
+      variables.each do |var, value|
+        instance_variable_set("@#{var}", value)
+      end
     end
 
     # Executes body of template to build a snippet packet.
     #
     # @return [AudioGlue::SnippetPacket]
     def build_snippet_packet
-      SnippetPacket.new(format, rate, channels).tap do |packet|
-        body = BodyContext.new(packet, @variables)
-        body.instance_eval(&body_proc)
-      end
+      @__packet__ = SnippetPacket.new(format, rate, channels)
+      instance_eval(&body_proc)
+      @__packet__
     end
 
     # Redefine +inspect+ to provide more information if class of the template
@@ -104,8 +105,35 @@ module AudioGlue
       else
         info = "<AudioGlue::Template"
         info << "(path=#{path.inspect})" if path
-        info << " @variables=#{@variables.inspect}>"
+
+        instance_variables.each do |var|
+          info << " #{var}="
+          info << instance_variable_get(var).inspect
+        end
+
+        info << ">"
       end
     end
+
+
+    # Create snippet for +:file+ type.
+    #
+    # @param  file_path [String] path to an audio file in local file system
+    #
+    # @return [AudioGlue::Snippet]
+    def file(file_path)
+      Snippet.new(:file, file_path, @__packet__)
+    end
+    private :file
+
+    # Create snippet for +:url+ type.
+    #
+    # @param remote_url [String] remote location of audio file
+    #
+    # @return [AudioGlue::Snippet]
+    def url(remote_url)
+      Snippet.new(:url, remote_url, @__packet__)
+    end
+    private :url
   end
 end

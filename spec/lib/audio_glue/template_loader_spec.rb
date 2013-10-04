@@ -77,6 +77,13 @@ describe AudioGlue::TemplateLoader do
         template = loader.get('valid')
         template.path.should == template_fixture('valid.glue')
       end
+
+      it 'should mix helper module if it is present' do
+        helper = Module.new
+        loader = described_class.new(TEMPLATE_FIXTURES_PATH, :helper => helper)
+        template = loader.get('valid')
+        template.ancestors.should include(helper)
+      end
     end
   end
 

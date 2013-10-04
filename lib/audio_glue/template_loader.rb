@@ -18,9 +18,12 @@ module AudioGlue
     attr_reader :cache
 
     # @param base_path [String] path to a directory with templates
-    def initialize(base_path)
+    # @param options [Hash] options
+    # @option opts :helper [Module] module which provides custom methods for templates.
+    def initialize(base_path, opts = {})
       @base_path = base_path
-      @cache = {}
+      @helper    = opts.delete(:helper)
+      @cache     = {}
     end
 
     # Load and cached template from +.glue+ template file.
@@ -53,8 +56,9 @@ module AudioGlue
     def load_tepmlate_from_file(path)
       Class.new(AudioGlue::Template).tap do |template|
         content = File.read(path)
-        template.instance_eval(content, path)
         template.path = path
+        template.send(:include, @helper) if @helper
+        template.instance_eval(content, path)
       end
     rescue Errno::ENOENT => err
       raise AudioGlue::LoadTemplateError, err.message

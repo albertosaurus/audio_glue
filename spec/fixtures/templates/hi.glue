@@ -1,0 +1,17 @@
+head {
+  format :flac
+  rate 22050
+  channels 1
+}
+
+body {
+  - input('hi.wav')
+  - input('hi.wav')
+
+  if @smalltalk
+    - input('how_are_you_doing.wav')
+    - input('fine_thanks.wav')
+  end
+
+  - input('bye_bye.wav')
+}
