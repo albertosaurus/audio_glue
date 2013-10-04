@@ -65,4 +65,24 @@ describe AudioGlue::Template do
       end
     end
   end
+
+  describe '#file' do
+    it 'should return a snippet of :file type' do
+      template = described_class.new
+      snippet  = template.send(:file, '/path/in.mp3')
+
+      snippet.type.should == :file
+      snippet.location.should == '/path/in.mp3'
+    end
+  end
+
+  describe '#url' do
+    it 'should return a snippet of :url type' do
+      template = described_class.new
+      snippet  = template.send(:url, 'http://s.com/sound.mp3')
+
+      snippet.type.should == :url
+      snippet.location.should == 'http://s.com/sound.mp3'
+    end
+  end
 end
