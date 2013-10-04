@@ -18,7 +18,7 @@ module AudioGlue
     attr_reader :cache
 
     # @param base_path [String] path to a directory with templates
-    # @param options [Hash] options
+    # @param opts [Hash] options
     # @option opts :helper [Module] module which provides custom methods for templates.
     def initialize(base_path, opts = {})
       @base_path = base_path

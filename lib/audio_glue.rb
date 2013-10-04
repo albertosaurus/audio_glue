@@ -31,4 +31,8 @@ module AudioGlue
   # Can be raised on attempt to load glue template.
   class LoadTemplateError < Error
   end
+
+  # Can be raised while audio data is building
+  class BuildError < Error
+  end
 end

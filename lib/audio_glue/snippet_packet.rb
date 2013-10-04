@@ -8,7 +8,8 @@ module AudioGlue
     extend Forwardable
     def_delegators :@snippets, :<<
 
-    attr_reader :format, :rate, :channels, :snippets
+    attr_accessor :format, :rate, :channels
+    attr_reader :snippets
 
     # @param format [Symbol, String]
     # @param rate [Numeric, String]

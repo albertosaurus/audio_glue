@@ -2,23 +2,20 @@ module AudioGlue
   # Pretty small adapter which is based on +ruby-sox+ library and handles only
   # local files (snippet type = :file).
   class PlainSoxAdapter < BaseAdapter
-    # TODO:
-    #   Update ruby-sox to have +build+ method which would return binary string
-    #   instead of writing output into a file. We hack sox with --sox-pipe option to
-    #   make it write output to stdout to achieve this.
+    # Write output to temporary file and read data from it and remove it.
     #
+    # @return [String] audio data as a binary string.
     def build
       tmp_file = gen_tmp_filename(@snippet_packet.format)
       write(tmp_file)
       File.binread(tmp_file)
+    rescue ::Sox::Error => err
+      raise(::AudioGlue::BuildError, err.message)
     ensure
-      FileUtils.rm tmp_file
+      FileUtils.rm tmp_file if File.exists?(tmp_file)
     end
 
 
-    # TODO:
-    #   Handle sox exceptions and raise AudioGlue exceptions.
-    #
     # Build output file using snippet packet and write it to a file.
     #
     # @param output_file [String] path to a faile

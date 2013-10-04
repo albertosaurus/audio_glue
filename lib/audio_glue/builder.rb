@@ -18,13 +18,21 @@ module AudioGlue
 
     # Build audio file and return result as binary string.
     #
-    # TODO:
-    #   Add paramaters +options+ to have an ability to customize particular
-    #   with +format+, +rate+ and +channels+.
+    # @param template [AudioGlue::Template]
+    # @param opts [Hash]
+    #
+    # @option opts :format [Symbol, String]
+    # @option opts :rate [Integer, String]
+    # @option opts :channels [Integer, String]
     #
     # @return [String]
-    def build(template)
-      @adapter.snippet_packet = template.build_snippet_packet
+    def build(template, opts = {})
+      packet =  template.build_snippet_packet
+      packet.format   = opts[:format]   if opts[:format]
+      packet.rate     = opts[:rate]     if opts[:rate]
+      packet.channels = opts[:channels] if opts[:channels]
+
+      @adapter.snippet_packet = packet
       @adapter.build
     end
   end
