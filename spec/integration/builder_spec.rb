@@ -5,6 +5,10 @@ describe 'AudioGlue::Builder integration' do
   let(:adapter)     { AudioGlue::PlainSoxAdapter.new  }
   let(:builder)     { AudioGlue::Builder.new(adapter) }
 
+  after do
+    FileUtils.rm output_file if File.exists?(output_file)
+  end
+
   context 'Template with local files' do
     let(:template_class) do
       Class.new(AudioGlue::Template) do
@@ -48,37 +52,4 @@ describe 'AudioGlue::Builder integration' do
       output_file.should sound_like output_fixture('hi_hi_how_are_you_fine_bye.wav')
     end
   end
-
-
-  #context 'Template with remote files' do
-  #  let(:template_class) do
-  #    Class.new(AudioGlue::Template) do
-  #      self.rate     = 44100
-  #      self.channels = 2
-
-
-  #      def build(packet)
-  #        packet << url('http://host.com/hi.wav')
-  #        packet << url('http://host.com/hi.wav')
-
-  #        packet << url('http://host.com/bye_bye.wav')
-  #      end
-  #    end
-  #  end
-
-  #  it 'should build audio from remote files' do
-  #    stub_request(:get, 'http://host.com/hi.wav').
-  #      to_return(File.binread(input_fixture('hi.wav')))
-
-  #    stub_request(:get, 'http://host.com/bye_bye.wav').
-  #      to_return(File.binread(input_fixture('bye_bye.wav')))
-
-
-
-  #    template = template_class.new
-  #    builder.write(template, output_file)
-
-  #    output_file.should sound_like output_fixture('hi_hi_bye_bye.wav')
-  #  end
-  #end
 end
