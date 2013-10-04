@@ -93,14 +93,14 @@ And then we can load it with `AudioGlue::TemplateLoader`:
 loader = TemplateLoader.new("/path/to/templates")
 
 # Load and cache the template
-loader.load("hello_world")  # => anonymous subclass of AudioGlue::Template
+loader.get("hello_world")  # => anonymous subclass of AudioGlue::Template
 ```
 
-### Glue Syntax
+#### Glue Syntax
 
 Glue template has 2 sections:
 * `head` - contains parameters of output file (`format`, `rate`, `channels`).
-* `body` - specify how to build audio
+* `body` - specifies how to build output
 
 Body contains audio snippets which should be used to build the audio.
 There few types of snippets:
@@ -112,7 +112,7 @@ To make a snippet be added to the output it should have a dash prefix (`-`).
 
 ### Custom adapters
 
-You may want to create your own adapter which concatenates audio files, if you think
+You might want to create your own adapter which concatenates audio files, if you think
 the existing one is not efficient or you wanna add some caching.
 
 The responsibility of adapters is to build audio data from `AudioGlue::SnippetPacket`.
