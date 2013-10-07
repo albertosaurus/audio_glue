@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe AudioGlue::TemplateLoader do
+  let(:loader) { described_class.new(TEMPLATE_FIXTURES_PATH) }
+
   describe '.new' do
     it 'should set base path' do
       loader = described_class.new('/glue_templates')
@@ -8,22 +10,12 @@ describe AudioGlue::TemplateLoader do
     end
 
     it 'should instantiate empty cache' do
-      loader = described_class.new('/')
       loader.cache.should == {}
     end
   end
 
-  describe '#absolute_path' do
-    it 'should builds absolute path to template file' do
-      loader = described_class.new('/base/path')
-      loader.send(:absolute_path, 'template_a').should == '/base/path/template_a.glue'
-    end
-  end
 
-
-  describe '#load' do
-    let(:loader) { described_class.new(TEMPLATE_FIXTURES_PATH) }
-
+  describe '#get' do
     context 'error' do
       context 'template does not exist' do
         it 'should raise LoadTemplateError' do
@@ -87,4 +79,19 @@ describe AudioGlue::TemplateLoader do
     end
   end
 
+  describe '#reset_cache!' do
+    it 'should clear hash' do
+      loader.get('valid')
+      loader.cache.should_not be_empty
+      loader.reset_cache!
+      loader.cache.should be_empty
+    end
+  end
+
+  describe '#absolute_path' do
+    it 'should builds absolute path to template file' do
+      loader = described_class.new('/base/path')
+      loader.send(:absolute_path, 'template_a').should == '/base/path/template_a.glue'
+    end
+  end
 end

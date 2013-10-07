@@ -36,6 +36,13 @@ module AudioGlue
       @cache[path] ||= load_tepmlate_from_file(path)
     end
 
+    # Reset cache.
+    #
+    # @return [Hash] empty cache
+    def reset_cache!
+      @cache.clear
+    end
+
 
 
     # Calculate absolute path to file from a template name.
