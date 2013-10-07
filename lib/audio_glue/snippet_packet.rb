@@ -2,7 +2,7 @@ module AudioGlue
   # Basically SnippetPacket is a collection of {AudioGlue::Snippet snippets} with
   # some additional info about output file(format, rate, number of channels).
   #
-  # It's supposed to be built from {AudioGlue::Template}, and then it's passed to one
+  # It's supposed to be built by {AudioGlue::Template}, and then it's passed to one
   # of adapters which builds audio output.
   class SnippetPacket
     extend Forwardable
