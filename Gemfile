@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 gem 'ruby-sox', :git => 'git@github.com:TMXCredit/ruby-sox.git'
 
@@ -10,12 +10,15 @@ end
 
 group :development, :test do
   gem 'pry'
+
+  # code metrics:
+  gem "metric_fu"
 end
 
 group :test do
   gem "rspec", "~> 2.14.1"
-  gem 'simplecov', :require => false
-  gem 'chromaprint', :git => 'git@github.com:TMXCredit/chromaprint.git', :branch => '12274_chromaprint'
+  gem 'simplecov'          , :require => false
+  gem 'simplecov-rcov-text', :require => false
+  gem 'chromaprint'
   gem 'webmock'
 end
-
