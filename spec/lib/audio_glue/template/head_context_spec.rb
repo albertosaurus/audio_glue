@@ -12,14 +12,14 @@ describe AudioGlue::Template::HeadContext do
   end
 
   describe '#rate' do
-    it 'should set format of template' do
+    it 'should set the rate of the template' do
       head.rate 8000
       template.rate.should == 8000
     end
   end
 
   describe '#channels' do
-    it 'should set format of template' do
+    it 'should set the number of channels for the template' do
       head.channels 2
       template.channels.should == 2
     end
