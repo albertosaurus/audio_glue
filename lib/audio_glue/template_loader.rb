@@ -1,5 +1,5 @@
 module AudioGlue
-  # Loads +.glue+ template and caches them.
+  # Loads +.glue+ templates and caches them.
   #
   # @example
   #  loader = AudioGlue::TemplateLoader.new('/project/audio_templates/')
@@ -19,24 +19,25 @@ module AudioGlue
 
     # @param base_path [String] path to a directory with templates
     # @param opts [Hash] options
-    # @option opts :helper [Module] module which provides custom methods for templates.
+    # @option opts :helper [Module] module which provides custom methods
+    #                               for templates.
     def initialize(base_path, opts = {})
       @base_path = base_path
       @helper    = opts.delete(:helper)
       @cache     = {}
     end
 
-    # Load and cached template from +.glue+ template file.
+    # Load and cache the template from a +.glue+ template file.
     #
     # @param template_name [String] name of template in +base_path+ directory
     #
     # @return [Class] a subclass of {AudioGlue::Template}
     def get(template_name)
       path = absolute_path(template_name)
-      @cache[path] ||= load_tepmlate_from_file(path)
+      @cache[path] ||= load_template_from_file(path)
     end
 
-    # Reset cache.
+    # Reset the cache.
     #
     # @return [Hash] empty cache
     def reset_cache!
@@ -45,7 +46,7 @@ module AudioGlue
 
 
 
-    # Calculate absolute path to file from a template name.
+    # Calculate the absolute path to a file from a template name.
     #
     # @param template_name [String] name of template in +base_path+ directory
     #
@@ -55,12 +56,12 @@ module AudioGlue
     end
     private :absolute_path
 
-    # Read .glue template file and create a template class from it.
+    # Read a +.glue+ template file and create a template class from it.
     #
     # @param path [String] absolute path to .glue template file
     #
     # @return [Class] a subclass of {AudioGlue::Template}
-    def load_tepmlate_from_file(path)
+    def load_template_from_file(path)
       Class.new(AudioGlue::Template).tap do |template|
         content = File.read(path)
         template.path = path
@@ -72,6 +73,6 @@ module AudioGlue
     rescue SyntaxError, NameError => err
       raise AudioGlue::LoadTemplateError, err.message, err.backtrace
     end
-    private :load_tepmlate_from_file
+    private :load_template_from_file
   end
 end
