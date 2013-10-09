@@ -1,14 +1,14 @@
 module AudioGlue
-  # Builds audio from {AudioGlue::Template template} instance.
+  # Builds audio from a {AudioGlue::Template template} instance.
   #
   # @example
-  #   # Instantiate builder with adapter
+  #   # Instantiate the builder with an adapter:
   #   builder = AudioGlue::Builder.new(AudioGlue::PlainSoxAdapter.new)
   #
-  #   # Create template instance
+  #   # Create the template instance:
   #   template = HiTemplate.new(:with_smalltalk => true)
   #
-  #   # Build output audio
+  #   # Build the output audio:
   #   builder.build(template) # => audio as a binary string
   class Builder
     # @param adapter [AudioGlue::BaseAdapter] instance of an adapter
@@ -16,7 +16,7 @@ module AudioGlue
       @adapter = adapter
     end
 
-    # Build audio file and return result as binary string.
+    # Build an audio file and return the result as a binary string.
     #
     # @param template [AudioGlue::Template]
     # @param opts [Hash]
@@ -27,10 +27,12 @@ module AudioGlue
     #
     # @return [String]
     def build(template, opts = {})
+      format, rate, channels = opts[:format], opts[:rate], opts[:channels]
+
       packet =  template.build_snippet_packet
-      packet.format   = opts[:format]   if opts[:format]
-      packet.rate     = opts[:rate]     if opts[:rate]
-      packet.channels = opts[:channels] if opts[:channels]
+      packet.format   = format   if format
+      packet.rate     = rate     if rate
+      packet.channels = channels if channels
 
       @adapter.snippet_packet = packet
       @adapter.build
