@@ -24,10 +24,11 @@ describe AudioGlue::Template do
         template.inspect.should == "<AudioGlue::Template(class)>"
       end
 
-      it 'should show path if it presents' do
-        template = Class.new(AudioGlue::Template)
+      it "should show the path if it's present" do
+        template      = Class.new(AudioGlue::Template)
         template.path = '/path/to/template.glue'
-        template.inspect.should == '<AudioGlue::Template(class) path="/path/to/template.glue">'
+        template.inspect.
+          should == '<AudioGlue::Template(class) path="/path/to/template.glue">'
       end
     end
   end
@@ -57,11 +58,12 @@ describe AudioGlue::Template do
         template.inspect.should == "<AudioGlue::Template>"
       end
 
-      it 'should show path if it presents' do
-        template_class = Class.new(AudioGlue::Template)
+      it "should show the path if it's present" do
+        template_class      = Class.new(AudioGlue::Template)
         template_class.path = "/oh.glue"
-        template = template_class.new(:g => 9.8)
-        template.inspect.should == '<AudioGlue::Template(path="/oh.glue") @g=9.8>'
+        template            = template_class.new(:g => 9.8)
+        template.inspect.
+          should == '<AudioGlue::Template(path="/oh.glue") @g=9.8>'
       end
     end
   end
@@ -71,7 +73,7 @@ describe AudioGlue::Template do
       template = described_class.new
       snippet  = template.send(:file, '/path/in.mp3')
 
-      snippet.type.should == :file
+      snippet.type.should     == :file
       snippet.location.should == '/path/in.mp3'
     end
   end
@@ -81,7 +83,7 @@ describe AudioGlue::Template do
       template = described_class.new
       snippet  = template.send(:url, 'http://s.com/sound.mp3')
 
-      snippet.type.should == :url
+      snippet.type.should     == :url
       snippet.location.should == 'http://s.com/sound.mp3'
     end
   end

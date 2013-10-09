@@ -1,6 +1,6 @@
 module AudioGlue
   # Represents an audio partial which will be used to build an output audio.
-  # There few types of snippets:
+  # There are a few types of snippets:
   # * :file - represents audio file in local file system
   # * :url  - represents remote audio file
   #
@@ -11,15 +11,15 @@ module AudioGlue
 
     # @param type [Symbol] :file or :url
     # @param location [String] location of the file
-    # @param snippet_packet [AudioGlue::SnippetPacket] snippet packet which is
-    #   to add audio snippet to packet when `-` unary method is called.
+    # @param snippet_packet [AudioGlue::SnippetPacket] the snippet packet used
+    #   to add the audio snippet to the packet when `-` unary method is called.
     def initialize(type, location, snippet_packet)
-      @type     = type
-      @location = location
+      @type           = type
+      @location       = location
       @snippet_packet = snippet_packet
     end
 
-    # Add self to snippet packet.
+    # Add self to the snippet packet.
     # It's used to support dash syntax in +.glue+ files, like:
     #   - file('/audio.mp3')
     #

@@ -19,12 +19,12 @@ require 'audio_glue'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 
-FIXTURES_PATH = File.expand_path('../fixtures/', __FILE__)
-SOUND_FIXTURES_PATH = File.join(FIXTURES_PATH, 'sounds')
+FIXTURES_PATH          = File.expand_path('../fixtures/', __FILE__)
+SOUND_FIXTURES_PATH    = File.join(FIXTURES_PATH, 'sounds')
 TEMPLATE_FIXTURES_PATH = File.join(FIXTURES_PATH, 'templates')
 
 RSpec.configure do |config|
-  # Generate filename for temporary file.
+  # Generate the filename for a temporary file.
   #
   # @param ext [String] file extension
   #
@@ -33,7 +33,7 @@ RSpec.configure do |config|
     Dir::Tmpname.make_tmpname ['/tmp/audio-glue-test-', ".#{ext}"], nil
   end
 
-  # Get absolute path to fixture file by its filename
+  # Get the absolute path to a fixture file by its filename.
   #
   # @param filename [String]
   #

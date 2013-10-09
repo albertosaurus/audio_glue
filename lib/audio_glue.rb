@@ -16,23 +16,23 @@ require 'audio_glue/template_loader'
 
 
 # AudioGlue is a library to concatenate audio snippets using templates.
-# Consider it like ERB for audio files, where input is not text snippets,
-# but audio snippets, and output is not a text, but an audio.
+# Consider it like ERB or HAML for audio files, where input is not text
+# snippets, but audio snippets, and output is not text, but audio.
 module AudioGlue
-  # Basic error for AudioGlue errors
+  # Basic error for AudioGlue errors.
   class Error < StandardError
   end
 
-  # Is raised on attempt to call not implemented method of object which class
-  # inherits from an abstract class.
+  # Raised on an attempt to call an unimplemented method of an object which
+  # a class inherits from an abstract class.
   class AbstractMethodCallError < Error
   end
 
-  # Can be raised on attempt to load glue template.
+  # Raised on a failed attempt to load a glue template.
   class LoadTemplateError < Error
   end
 
-  # Can be raised while audio data is building
+  # Raised when audio data fails to be built.
   class BuildError < Error
   end
 end

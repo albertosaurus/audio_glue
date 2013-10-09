@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AudioGlue::PlainSoxAdapter do
-  let(:adapter) { described_class.new }
+  let(:adapter)        { described_class.new }
   let(:snippet_packet) { double(:snippet_packet, :format => :mp3) }
 
   describe '#build' do

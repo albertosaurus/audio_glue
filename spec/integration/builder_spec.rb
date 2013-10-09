@@ -49,16 +49,21 @@ describe 'AudioGlue::Builder integration' do
       audio = builder.build(template)
       File.write(output_file, audio)
 
-      output_file.should sound_like output_fixture('hi_hi_how_are_you_fine_bye.wav')
+      output_file.should sound_like output_fixture(
+                                      'hi_hi_how_are_you_fine_bye.wav'
+                                    )
     end
 
     context 'with options' do
       let(:output_file) { gen_tmp_filename('flac') }
 
-      it 'should use passed options' do
+      it 'should use the passed options' do
         template = template_class.new
 
-        audio = builder.build(template, :format => 'flac', :rate => 44100, :channels => 2)
+        audio = builder.build(template,
+                              :format   => 'flac',
+                              :rate     => 44100,
+                              :channels => 2)
         File.write(output_file, audio)
 
         output_file.should have_rate(44100)

@@ -1,14 +1,15 @@
 module AudioGlue
   class Template
-    # Context in which  +head+ statement of +.glue+ template is executed.
-    # Is used to set +format+, +rate+ and +channels+ on template.
+    # The context in which the +head+ statement of a +.glue+ template is
+    # executed. It's used to set the +format+, +rate+ and +channels+ on
+    # the template.
     class HeadContext
       # @param template [Class] subclass of {AudioGlue::Template}
       def initialize(template)
         @template = template
       end
 
-      # Set format of audio on template("mp3", "ogg", "wav", etc).
+      # Set the audio format on the template ("mp3", "ogg", "wav", etc).
       #
       # @param format_value [Symbol, String]
       #
@@ -17,7 +18,7 @@ module AudioGlue
         @template.format = format_value
       end
 
-      # Set rate of audio on template.
+      # Set the audio bitrate on the template.
       #
       # @param rate_value [Integer, String]
       #
@@ -26,7 +27,7 @@ module AudioGlue
         @template.rate = rate_value
       end
 
-      # Set number of channels on template.
+      # Set the number of channels on the template.
       #
       # @param channels_value [Integer, String]
       #

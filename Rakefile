@@ -13,14 +13,14 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "audio_glue"
-  gem.homepage = "http://github.com/TMXCredit/audio_glue"
-  gem.license = "MIT"
-  gem.summary = %Q{aka ERB for audio files}
+  gem.name        = "audio_glue"
+  gem.homepage    = "http://github.com/TMXCredit/audio_glue"
+  gem.license     = "MIT"
+  gem.summary     = %Q{aka ERB for audio files}
   gem.description = %Q{Tool to assemble audio files from templates}
-  gem.authors = ['TMX Credit' , 'Potapov Sergey']
-  gem.email = ['rubygems@tmxcredit.com', 'blake131313@gmail.com']
-  gem.files = Dir["lib/**/*"] + Dir['README.markdown', 'LICENSE.txt']
+  gem.authors     = ['TMX Credit' , 'Potapov Sergey']
+  gem.email       = ['rubygems@tmxcredit.com', 'blake131313@gmail.com']
+  gem.files       = Dir["lib/**/*"] + Dir['README.markdown', 'LICENSE.txt']
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -32,7 +32,7 @@ end
 
 RSpec::Core::RakeTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
+  spec.rcov    = true
 end
 
 task :default => :spec
@@ -42,7 +42,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "audio_glue #{version}"
+  rdoc.title    = "audio_glue #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

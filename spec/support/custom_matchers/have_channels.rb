@@ -1,4 +1,5 @@
-# Test number of channels in audio file. Based on +soxi+ command line tool.
+# Test the number of channels in an audio file.
+# Based on the +soxi+ command line tool.
 #
 # @example
 #   "highway_to_hell.mp3".should have_channels(2)
@@ -12,7 +13,8 @@ RSpec::Matchers.define :have_channels do |expected_channels|
   end
 
   failure_message_for_should do
-    "expected #{@file_path} to have channels #{expected_channels} but it's #{@actual_channels}"
+    "expected #{@file_path} to have channels #{expected_channels} but it's " \
+    "#{@actual_channels}"
   end
 
   failure_message_for_should_not do
@@ -23,4 +25,3 @@ RSpec::Matchers.define :have_channels do |expected_channels|
     "have channels #{expected_channels}"
   end
 end
-

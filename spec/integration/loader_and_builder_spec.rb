@@ -17,10 +17,11 @@ describe 'Using loader and builder together' do
   end
 
   it 'should build' do
-    loader = AudioGlue::TemplateLoader.new(TEMPLATE_FIXTURES_PATH, :helper => helper_module)
+    loader = AudioGlue::TemplateLoader.new( TEMPLATE_FIXTURES_PATH,
+                                            :helper => helper_module )
 
     template_class = loader.get('hi')
-    template = template_class.new(:smalltalk => true)
+    template       = template_class.new(:smalltalk => true)
 
     adapter = AudioGlue::PlainSoxAdapter.new
     builder = AudioGlue::Builder.new(adapter)
@@ -28,6 +29,8 @@ describe 'Using loader and builder together' do
     audio_data = builder.build(template)
     File.binwrite(output_file, audio_data)
 
-    output_file.should sound_like output_fixture('hi_hi_how_are_you_fine_bye.wav')
+    output_file.should sound_like output_fixture(
+                                    'hi_hi_how_are_you_fine_bye.wav'
+                                  )
   end
 end

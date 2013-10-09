@@ -1,6 +1,6 @@
 module AudioGlue
-  # Pretty small adapter which is based on +ruby-sox+ library and handles only
-  # local files (snippet type = :file).
+  # Pretty small adapter which is based on the +ruby-sox+ library and handles
+  # only local files (snippet type = :file).
   class PlainSoxAdapter < BaseAdapter
     # Write output to temporary file and read data from it and remove it.
     #
@@ -16,22 +16,22 @@ module AudioGlue
     end
 
 
-    # Build output file using snippet packet and write it to a file.
+    # Build an output file using the snippet packet and write it to a file.
     #
-    # @param output_file [String] path to a faile
+    # @param output_file [String] path to a file
     #
     # @return [void]
     def write(output_file)
       input_files = @snippet_packet.snippets.map { |snippet| snippet.location }
-      combiner = Sox::Combiner.new(input_files,
-                                   :combine  => :concatenate,
-                                   :rate     => @snippet_packet.rate,
-                                   :channels => @snippet_packet.channels)
+      combiner    = Sox::Combiner.new( input_files,
+                                       :combine  => :concatenate,
+                                       :rate     => @snippet_packet.rate,
+                                       :channels => @snippet_packet.channels )
       combiner.write(output_file)
     end
     private :write
 
-    # Generate unique name for a temporary file.
+    # Generate a unique name for a temporary file.
     #
     # @param ext [String] extension of a file
     #

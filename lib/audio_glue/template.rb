@@ -1,13 +1,15 @@
 module AudioGlue
-  # Audio templates.
-  # Every particular template is a subclass of {AudioGlue::Template}. Quite often
-  # the classes can be anonymous(that's why +inspect+ is redefined to provide more information).
+  # Represents an audio template.
+  # Every particular template is a subclass of {AudioGlue::Template}.
+  # Quite often the classes can be anonymous. (That's why +inspect+ is redefined
+  # to provide more information.)
   #
-  # Template class owns +format+, +rate+, +channels+ and also a block which is used
-  # to create {AudioGlue::SnippetPacket} ("render" in term of view templates).
+  # The Template class owns +format+, +rate+, +channels+, and also a block used
+  # to create an {AudioGlue::SnippetPacket}
+  # ("render", in terms of the view templates).
   #
-  # Instances of templates differs from template classes with instance variables,
-  # which can be used in +body+ block.
+  # A Template instance differs from the Template class. It has instance
+  # variables, that can be used in the +body+ block.
   #
   # @example
   #   class HiTemplate < AudioGlue::Template
@@ -27,14 +29,13 @@ module AudioGlue
   #     end
   #   end
   #
-  #   # Create an instance of template. We wonder how our friend is doing so
+  #   # Create an instance of Template. We wonder how our friend is doing so
   #   # we pass ":with_smalltalk => true", to add a remote URL snippet.
   #   template = HiTemplate.new(:with_smalltalk => true)
   #
-  #   # Let's create a snippet packet
+  #   # Let's create a snippet packet:
   #   packet = template.build_snippet_packet => # <AudioGlue::SnippetPacket ..>
-  #   # Now we can pass a snippet packet to adapter to build output audio.
-  #
+  #   # Now we can pass a snippet packet to the adapter to build output audio.
   class Template
     extend Forwardable
     def_delegators 'self.class', :format, :rate, :channels, :path, :body_proc
@@ -43,7 +44,7 @@ module AudioGlue
       attr_accessor :format, :rate, :channels, :path, :body_proc
     end
 
-    # Method to process +head+ statement in +.glue+ templates.
+    # Process the +head+ block in a +.glue+ template.
     #
     # @yield block which will be executed in context of
     #   {AudioGlue::Template::HeadContext} object.
@@ -53,7 +54,7 @@ module AudioGlue
       HeadContext.new(self).instance_eval(&block)
     end
 
-    # Method to process +body+ statement in +.glue+ templates.
+    # Process the +body+ block in a +.glue+ template.
     #
     # @yield block which will be executed in context of
     #   {AudioGlue::Template::BodyContext} object. It should define body of
@@ -63,8 +64,8 @@ module AudioGlue
       self.body_proc = block
     end
 
-    # Redefine +inspect+ method to provide more information when it's an
-    # anonymous class.
+    # Redefine the +inspect+ method to provide more information when the
+    # template is an anonymous class.
     #
     # @return [String]
     def self.inspect
@@ -86,7 +87,7 @@ module AudioGlue
       end
     end
 
-    # Executes body of template to build a snippet packet.
+    # Execute the body of the template to build a snippet packet.
     #
     # @return [AudioGlue::SnippetPacket]
     def build_snippet_packet
@@ -95,8 +96,8 @@ module AudioGlue
       @__packet__
     end
 
-    # Redefine +inspect+ to provide more information if class of the template
-    # object is anonymous.
+    # Redefine +inspect+ to provide more information if the class of the
+    # template object is anonymous.
     #
     # @return [String]
     def inspect
@@ -116,7 +117,7 @@ module AudioGlue
     end
 
 
-    # Create snippet for +:file+ type.
+    # Create a snippet (with the +:file+ type) for the given audio file.
     #
     # @param  file_path [String] path to an audio file in local file system
     #
@@ -126,7 +127,7 @@ module AudioGlue
     end
     private :file
 
-    # Create snippet for +:url+ type.
+    # Create a snippet (with +:url+ type) for the given audio URL.
     #
     # @param remote_url [String] remote location of audio file
     #
