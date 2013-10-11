@@ -1,0 +1,7 @@
+head {
+  format :mp3
+  bad_attribute 110
+}
+
+body {
+}

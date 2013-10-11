@@ -1,0 +1,1615 @@
+---
+:cane:
+  :total_violations: 1
+  :violations:
+    :line_style:
+    - :line: spec/lib/audio_glue/template_loader_spec.rb:40
+      :description: Line is >80 characters (82)
+:churn:
+  :changes: []
+  :class_churn: []
+  :method_churn: []
+  :changed_files: []
+  :changed_classes: []
+  :changed_methods: []
+:flay:
+  :total_score: '0'
+  :matches: []
+:flog:
+  :total: 166.13450991007824
+  :average: 5.034379088184189
+  :method_containers:
+  - :name: AudioGlue::TemplateLoader
+    :path: lib/audio_glue/template_loader.rb
+    :total_score: 33.686386266754496
+    :highest_score: 21.32721266363704
+    :average_score: 5.61439771112575
+    :methods:
+      AudioGlue::TemplateLoader#load_template_from_file:
+        :operators:
+          :branch: 3.4000000000000004
+          :new: 1.3
+          :tap: 1.1
+          :assignment: 4.800000000000001
+          :read: 1.3000000000000003
+          :send: 4.200000000000001
+          :instance_eval: 6.500000000000002
+          :message: 2.6
+          :raise: 2.2
+          :backtrace: 1.3
+        :score: 21.32721266363704
+        :path: lib/audio_glue/template_loader.rb:64
+      AudioGlue::TemplateLoader#initialize:
+        :operators:
+          :assignment: 4.0
+          :delete: 1.0
+        :score: 4.123105625617661
+        :path: lib/audio_glue/template_loader.rb:24
+      AudioGlue::TemplateLoader#none:
+        :operators:
+          :attr_reader: 2.0
+          :private: 2.0
+        :score: 4.0
+        :path: 
+      AudioGlue::TemplateLoader#get:
+        :operators:
+          :assignment: 1.0
+          :absolute_path: 1.0
+          :load_template_from_file: 1.0
+        :score: 2.23606797749979
+        :path: lib/audio_glue/template_loader.rb:35
+      AudioGlue::TemplateLoader#reset_cache!:
+        :operators:
+          :clear: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template_loader.rb:43
+      AudioGlue::TemplateLoader#absolute_path:
+        :operators:
+          :join: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template_loader.rb:54
+  - :name: AudioGlue::Template
+    :path: lib/audio_glue/template.rb
+    :total_score: 47.52914044086211
+    :highest_score: 18.259518065929345
+    :average_score: 7.921523406810351
+    :methods:
+      AudioGlue::Template#inspect:
+        :operators:
+          :branch: 3.4000000000000004
+          :class: 1.2
+          :name: 1.0
+          :assignment: 1.2000000000000002
+          :path: 2.9000000000000004
+          :inspect: 3.1000000000000005
+          :<<: 5.300000000000002
+          :instance_variables: 1.4000000000000001
+          :each: 1.2000000000000002
+          :instance_variable_get: 1.8000000000000005
+        :score: 18.259518065929345
+        :path: lib/audio_glue/template.rb:103
+      AudioGlue::Template#build_snippet_packet:
+        :operators:
+          :assignment: 1.0
+          :format: 1.2
+          :rate: 1.2
+          :channels: 1.2
+          :new: 1.0
+          :block_pass: 1.2
+          :to_proc_normal: 1.2
+          :body_proc: 1.2
+          :instance_eval: 5.0
+        :score: 13.23782459469833
+        :path: lib/audio_glue/template.rb:93
+      AudioGlue::Template#none:
+        :operators:
+          :extend: 2.0
+          :def_delegators: 1.0
+          :attr_accessor: 1.5
+          :sclass: 5.0
+          :private: 2.0000000000000004
+        :score: 11.5
+        :path: 
+      AudioGlue::Template#initialize:
+        :operators:
+          :assignment: 1.0
+          :branch: 1.0
+          :each: 1.0
+          :instance_variable_set: 1.1
+        :score: 2.5317977802344327
+        :path: lib/audio_glue/template.rb:84
+      AudioGlue::Template#url:
+        :operators:
+          :new: 1.0000000000000002
+        :score: 1.0000000000000002
+        :path: lib/audio_glue/template.rb:135
+      AudioGlue::Template#file:
+        :operators:
+          :new: 1.0000000000000002
+        :score: 1.0000000000000002
+        :path: lib/audio_glue/template.rb:125
+  - :name: main
+    :path: ''
+    :total_score: 13.199999999999998
+    :highest_score: 13.199999999999998
+    :average_score: 13.199999999999998
+    :methods:
+      main#none:
+        :operators:
+          :require: 13.199999999999998
+        :score: 13.199999999999998
+        :path: 
+  - :name: AudioGlue::Builder
+    :path: lib/audio_glue/builder.rb
+    :total_score: 12.835962149314266
+    :highest_score: 11.835962149314266
+    :average_score: 6.417981074657133
+    :methods:
+      AudioGlue::Builder#build:
+        :operators:
+          :assignment: 10.299999999999999
+          :[]: 3.0
+          :build_snippet_packet: 1.0
+          :branch: 3.0
+          :build: 1.0
+        :score: 11.835962149314266
+        :path: lib/audio_glue/builder.rb:29
+      AudioGlue::Builder#initialize:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/builder.rb:15
+  - :name: AudioGlue::PlainSoxAdapter
+    :path: lib/audio_glue/adapters/plain_sox_adapter.rb
+    :total_score: 20.995078003149974
+    :highest_score: 9.976973488989534
+    :average_score: 5.2487695007874935
+    :methods:
+      AudioGlue::PlainSoxAdapter#build:
+        :operators:
+          :branch: 2.0
+          :assignment: 2.3000000000000003
+          :format: 1.4000000000000001
+          :gen_tmp_filename: 1.2000000000000002
+          :write: 1.2000000000000002
+          :binread: 1.2000000000000002
+          :message: 1.3
+          :raise: 1.1
+          :exists?: 1.0
+          :rm: 1.1
+        :score: 9.976973488989534
+        :path: lib/audio_glue/adapters/plain_sox_adapter.rb:8
+      AudioGlue::PlainSoxAdapter#write:
+        :operators:
+          :assignment: 2.0
+          :branch: 1.0
+          :snippets: 1.2
+          :map: 1.0
+          :location: 1.1
+          :rate: 1.2
+          :channels: 1.2
+          :new: 1.0
+          :write: 1.0
+        :score: 8.01810451416044
+        :path: lib/audio_glue/adapters/plain_sox_adapter.rb:24
+      AudioGlue::PlainSoxAdapter#none:
+        :operators:
+          :private: 2.0
+        :score: 2.0
+        :path: 
+      AudioGlue::PlainSoxAdapter#gen_tmp_filename:
+        :operators:
+          :make_tmpname: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/adapters/plain_sox_adapter.rb:39
+  - :name: AudioGlue::Template::inspect
+    :path: lib/audio_glue/template.rb
+    :total_score: 8.287943049997388
+    :highest_score: 8.287943049997388
+    :average_score: 8.287943049997388
+    :methods:
+      AudioGlue::Template::inspect:
+        :operators:
+          :branch: 2.2
+          :name: 1.0
+          :assignment: 1.2000000000000002
+          :path: 2.9000000000000004
+          :inspect: 1.5000000000000002
+          :<<: 2.5000000000000004
+        :score: 8.287943049997388
+        :path: lib/audio_glue/template.rb:71
+  - :name: AudioGlue::Template::head
+    :path: lib/audio_glue/template.rb
+    :total_score: 7.4
+    :highest_score: 7.4
+    :average_score: 7.4
+    :methods:
+      AudioGlue::Template::head:
+        :operators:
+          :new: 1.2
+          :block_pass: 1.2
+          :instance_eval: 5.0
+        :score: 7.4
+        :path: lib/audio_glue/template.rb:53
+  - :name: AudioGlue::SnippetPacket
+    :path: lib/audio_glue/snippet_packet.rb
+    :total_score: 9.0
+    :highest_score: 5.0
+    :average_score: 4.5
+    :methods:
+      AudioGlue::SnippetPacket#none:
+        :operators:
+          :extend: 2.0
+          :def_delegators: 1.0
+          :attr_accessor: 1.0
+          :attr_reader: 1.0
+        :score: 5.0
+        :path: 
+      AudioGlue::SnippetPacket#initialize:
+        :operators:
+          :assignment: 4.0
+        :score: 4.0
+        :path: lib/audio_glue/snippet_packet.rb:18
+  - :name: AudioGlue::Snippet
+    :path: lib/audio_glue/snippet.rb
+    :total_score: 5.0
+    :highest_score: 3.0
+    :average_score: 1.6666666666666667
+    :methods:
+      AudioGlue::Snippet#initialize:
+        :operators:
+          :assignment: 3.0
+        :score: 3.0
+        :path: lib/audio_glue/snippet.rb:16
+      AudioGlue::Snippet#-@:
+        :operators:
+          :<<: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/snippet.rb:27
+      AudioGlue::Snippet#none:
+        :operators:
+          :attr_reader: 1.0
+        :score: 1.0
+        :path: 
+  - :name: AudioGlue::BaseAdapter
+    :path: lib/audio_glue/adapters/base_adapter.rb
+    :total_score: 3.2
+    :highest_score: 2.2
+    :average_score: 1.6
+    :methods:
+      AudioGlue::BaseAdapter#build:
+        :operators:
+          :__method__: 1.2
+          :raise: 1.0
+        :score: 2.2
+        :path: lib/audio_glue/adapters/base_adapter.rb:20
+      AudioGlue::BaseAdapter#none:
+        :operators:
+          :attr_accessor: 1.0
+        :score: 1.0
+        :path: 
+  - :name: AudioGlue::Template::HeadContext
+    :path: lib/audio_glue/template/head_context.rb
+    :total_score: 4.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      AudioGlue::Template::HeadContext#format:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template/head_context.rb:17
+      AudioGlue::Template::HeadContext#initialize:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template/head_context.rb:8
+      AudioGlue::Template::HeadContext#rate:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template/head_context.rb:26
+      AudioGlue::Template::HeadContext#channels:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template/head_context.rb:35
+  - :name: AudioGlue::Template::body
+    :path: lib/audio_glue/template.rb
+    :total_score: 1.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      AudioGlue::Template::body:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: lib/audio_glue/template.rb:63
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 39
+      :methods: []
+    - :class_name: AudioGlue::Template
+      :complexity: 14
+      :lines: 98
+      :methods:
+      - :name: AudioGlue::Template#inspect
+        :complexity: 4
+        :lines: 14
+      - :name: AudioGlue::Template#self.inspect
+        :complexity: 3
+        :lines: 8
+      - :name: AudioGlue::Template#initialize
+        :complexity: 2
+        :lines: 4
+      - :name: AudioGlue::Template#build_snippet_packet
+        :complexity: 1
+        :lines: 4
+      - :name: AudioGlue::Template#file
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template#url
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template#self.body
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template#self.head
+        :complexity: 1
+        :lines: 2
+    - :class_name: 'AudioGlue::Template::'
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    :filename: lib/audio_glue/template.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 9
+      :methods: []
+    - :class_name: AudioGlue::TemplateLoader
+      :complexity: 9
+      :lines: 68
+      :methods:
+      - :name: AudioGlue::TemplateLoader#load_template_from_file
+        :complexity: 5
+        :lines: 11
+      - :name: AudioGlue::TemplateLoader#reset_cache!
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::TemplateLoader#absolute_path
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::TemplateLoader#get
+        :complexity: 1
+        :lines: 3
+      - :name: AudioGlue::TemplateLoader#initialize
+        :complexity: 1
+        :lines: 4
+    :filename: lib/audio_glue/template_loader.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    - :class_name: AudioGlue::PlainSoxAdapter
+      :complexity: 6
+      :lines: 39
+      :methods:
+      - :name: AudioGlue::PlainSoxAdapter#build
+        :complexity: 3
+        :lines: 8
+      - :name: AudioGlue::PlainSoxAdapter#write
+        :complexity: 2
+        :lines: 7
+      - :name: AudioGlue::PlainSoxAdapter#gen_tmp_filename
+        :complexity: 1
+        :lines: 2
+    :filename: lib/audio_glue/adapters/plain_sox_adapter.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 13
+      :methods: []
+    - :class_name: AudioGlue::Builder
+      :complexity: 5
+      :lines: 27
+      :methods:
+      - :name: AudioGlue::Builder#build
+        :complexity: 4
+        :lines: 10
+      - :name: AudioGlue::Builder#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/audio_glue/builder.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: AudioGlue::Template
+      :complexity: 0
+      :lines: 5
+      :methods: []
+    - :class_name: AudioGlue::Template::HeadContext
+      :complexity: 4
+      :lines: 32
+      :methods:
+      - :name: AudioGlue::Template::HeadContext#channels
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template::HeadContext#rate
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template::HeadContext#format
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Template::HeadContext#initialize
+        :complexity: 1
+        :lines: 2
+    :filename: lib/audio_glue/template/head_context.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 9
+      :methods: []
+    - :class_name: AudioGlue::Snippet
+      :complexity: 2
+      :lines: 21
+      :methods:
+      - :name: AudioGlue::Snippet#-@
+        :complexity: 1
+        :lines: 2
+      - :name: AudioGlue::Snippet#initialize
+        :complexity: 1
+        :lines: 4
+    :filename: lib/audio_glue/snippet.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 11
+      :methods: []
+    - :class_name: AudioGlue::BaseAdapter
+      :complexity: 1
+      :lines: 12
+      :methods:
+      - :name: AudioGlue::BaseAdapter#build
+        :complexity: 1
+        :lines: 2
+    :filename: lib/audio_glue/adapters/base_adapter.rb
+  - :classes:
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 8
+      :methods: []
+    - :class_name: AudioGlue::SnippetPacket
+      :complexity: 1
+      :lines: 16
+      :methods:
+      - :name: AudioGlue::SnippetPacket#initialize
+        :complexity: 1
+        :lines: 5
+    :filename: lib/audio_glue/snippet_packet.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: AudioGlue
+      :complexity: 0
+      :lines: 13
+      :methods: []
+    - :class_name: AudioGlue::Error
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: AudioGlue::AbstractMethodCallError
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: AudioGlue::LoadTemplateError
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: AudioGlue::BuildError
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: lib/audio_glue.rb
+  :classes:
+  - :name: AudioGlue::Template
+    :complexity: 14
+    :lines: 98
+    :defs:
+    - :name: AudioGlue::Template#self.head
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template#self.body
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template#self.inspect
+      :complexity: 3
+      :lines: 8
+    - :name: AudioGlue::Template#initialize
+      :complexity: 2
+      :lines: 4
+    - :name: AudioGlue::Template#build_snippet_packet
+      :complexity: 1
+      :lines: 4
+    - :name: AudioGlue::Template#inspect
+      :complexity: 4
+      :lines: 14
+    - :name: AudioGlue::Template#file
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template#url
+      :complexity: 1
+      :lines: 2
+  - :name: AudioGlue::TemplateLoader
+    :complexity: 9
+    :lines: 68
+    :defs:
+    - :name: AudioGlue::TemplateLoader#initialize
+      :complexity: 1
+      :lines: 4
+    - :name: AudioGlue::TemplateLoader#get
+      :complexity: 1
+      :lines: 3
+    - :name: AudioGlue::TemplateLoader#reset_cache!
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::TemplateLoader#absolute_path
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::TemplateLoader#load_template_from_file
+      :complexity: 5
+      :lines: 11
+  - :name: AudioGlue::PlainSoxAdapter
+    :complexity: 6
+    :lines: 39
+    :defs:
+    - :name: AudioGlue::PlainSoxAdapter#build
+      :complexity: 3
+      :lines: 8
+    - :name: AudioGlue::PlainSoxAdapter#write
+      :complexity: 2
+      :lines: 7
+    - :name: AudioGlue::PlainSoxAdapter#gen_tmp_filename
+      :complexity: 1
+      :lines: 2
+  - :name: AudioGlue::Builder
+    :complexity: 5
+    :lines: 27
+    :defs:
+    - :name: AudioGlue::Builder#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Builder#build
+      :complexity: 4
+      :lines: 10
+  - :name: AudioGlue::Template::HeadContext
+    :complexity: 4
+    :lines: 32
+    :defs:
+    - :name: AudioGlue::Template::HeadContext#initialize
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template::HeadContext#format
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template::HeadContext#rate
+      :complexity: 1
+      :lines: 2
+    - :name: AudioGlue::Template::HeadContext#channels
+      :complexity: 1
+      :lines: 2
+  - :name: AudioGlue::Snippet
+    :complexity: 2
+    :lines: 21
+    :defs:
+    - :name: AudioGlue::Snippet#initialize
+      :complexity: 1
+      :lines: 4
+    - :name: AudioGlue::Snippet#-@
+      :complexity: 1
+      :lines: 2
+  - :name: AudioGlue::SnippetPacket
+    :complexity: 1
+    :lines: 16
+    :defs:
+    - :name: AudioGlue::SnippetPacket#initialize
+      :complexity: 1
+      :lines: 5
+  - :name: AudioGlue::BaseAdapter
+    :complexity: 1
+    :lines: 12
+    :defs:
+    - :name: AudioGlue::BaseAdapter#build
+      :complexity: 1
+      :lines: 2
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 9
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 11
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 8
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 13
+  - :name: AudioGlue::Template
+    :complexity: 0
+    :lines: 5
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 2
+  - :name: AudioGlue::Error
+    :complexity: 0
+    :lines: 1
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 13
+  - :name: AudioGlue::AbstractMethodCallError
+    :complexity: 0
+    :lines: 1
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 4
+  - :name: AudioGlue::LoadTemplateError
+    :complexity: 0
+    :lines: 1
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 9
+  - :name: 'AudioGlue::Template::'
+    :complexity: 0
+    :lines: 2
+  - :name: AudioGlue::BuildError
+    :complexity: 0
+    :lines: 1
+  - :name: AudioGlue
+    :complexity: 0
+    :lines: 39
+  :methods:
+  - :name: AudioGlue::TemplateLoader#load_template_from_file
+    :complexity: 5
+    :lines: 11
+  - :name: AudioGlue::Builder#build
+    :complexity: 4
+    :lines: 10
+  - :name: AudioGlue::Template#inspect
+    :complexity: 4
+    :lines: 14
+  - :name: AudioGlue::PlainSoxAdapter#build
+    :complexity: 3
+    :lines: 8
+  - :name: AudioGlue::Template#self.inspect
+    :complexity: 3
+    :lines: 8
+  - :name: AudioGlue::PlainSoxAdapter#write
+    :complexity: 2
+    :lines: 7
+  - :name: AudioGlue::Template#initialize
+    :complexity: 2
+    :lines: 4
+  - :name: AudioGlue::SnippetPacket#initialize
+    :complexity: 1
+    :lines: 5
+  - :name: AudioGlue::Template::HeadContext#format
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Builder#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::PlainSoxAdapter#gen_tmp_filename
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template::HeadContext#rate
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template::HeadContext#initialize
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template::HeadContext#channels
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::TemplateLoader#absolute_path
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::TemplateLoader#reset_cache!
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::TemplateLoader#get
+    :complexity: 1
+    :lines: 3
+  - :name: AudioGlue::TemplateLoader#initialize
+    :complexity: 1
+    :lines: 4
+  - :name: AudioGlue::Template#url
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template#file
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Snippet#initialize
+    :complexity: 1
+    :lines: 4
+  - :name: AudioGlue::Template#build_snippet_packet
+    :complexity: 1
+    :lines: 4
+  - :name: AudioGlue::Snippet#-@
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::BaseAdapter#build
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template#self.body
+    :complexity: 1
+    :lines: 2
+  - :name: AudioGlue::Template#self.head
+    :complexity: 1
+    :lines: 2
+:reek:
+  :matches:
+  - :file_path: lib/audio_glue.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/adapters/base_adapter.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/adapters/plain_sox_adapter.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/builder.rb
+    :code_smells:
+    - :method: AudioGlue::Builder#build
+      :message: has approx 7 statements
+      :type: TooManyStatements
+    - :method: AudioGlue::Builder#build
+      :message: refers to opts more than self
+      :type: FeatureEnvy
+    - :method: AudioGlue::Builder#build
+      :message: refers to packet more than self
+      :type: FeatureEnvy
+  - :file_path: lib/audio_glue/snippet.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/snippet_packet.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/template.rb
+    :code_smells:
+    - :method: AudioGlue::Template#inspect
+      :message: has approx 7 statements
+      :type: TooManyStatements
+  - :file_path: lib/audio_glue/template/head_context.rb
+    :code_smells: []
+  - :file_path: lib/audio_glue/template_loader.rb
+    :code_smells:
+    - :method: AudioGlue::TemplateLoader#load_template_from_file
+      :message: calls err.message twice
+      :type: DuplicateMethodCall
+    - :method: AudioGlue::TemplateLoader#load_template_from_file
+      :message: has approx 7 statements
+      :type: TooManyStatements
+:roodi:
+  :total:
+  - Found 0 errors.
+  :problems: []
+:stats:
+  :codeLOC: 208
+  :testLOC: 347
+  :code_to_test_ratio: 1.7
+  :lines:
+  - :name: Libraries
+    :lines: 461
+    :loc: 208
+    :classes: 13
+    :methods: 25
+    :methods_per_class: 1
+    :loc_per_method: 6
+  - :name: Integration specs
+    :lines: 112
+    :loc: 85
+    :classes: 0
+    :methods: 1
+    :methods_per_class: 0
+    :loc_per_method: 83
+  - :name: Adapters specs
+    :lines: 34
+    :loc: 28
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Template specs
+    :lines: 27
+    :loc: 23
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Audio_glue specs
+    :lines: 253
+    :loc: 211
+    :classes: 2
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 887
+    :loc: 555
+    :classes: 15
+    :methods: 26
+    :methods_per_class: 1
+    :loc_per_method: 19
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:64
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '64'
+      hash_key: '["lib/audio_glue/template_loader.rb:64", nil, nil]'
+    details:
+      flog: complexity is 21.3
+      saikuro: complexity is 5.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", nil, nil]'
+    details:
+      flog: complexity is 18.3
+      saikuro: average complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/builder.rb:29
+      file_name: lib/audio_glue/builder.rb
+      line_number: '29'
+      hash_key: '["lib/audio_glue/builder.rb:29", nil, nil]'
+    details:
+      flog: complexity is 11.8
+      saikuro: complexity is 4.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:93
+      file_name: lib/audio_glue/template.rb
+      line_number: '93'
+      hash_key: '["lib/audio_glue/template.rb:93", nil, nil]'
+    details:
+      flog: complexity is 13.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:8
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '8'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:8", nil, nil]'
+    details:
+      flog: complexity is 10.0
+      saikuro: complexity is 3.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:24
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '24'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:24", nil, nil]'
+    details:
+      flog: complexity is 8.0
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:71
+      file_name: lib/audio_glue/template.rb
+      line_number: '71'
+      hash_key: '["lib/audio_glue/template.rb:71", nil, nil]'
+    details:
+      flog: complexity is 8.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:53
+      file_name: lib/audio_glue/template.rb
+      line_number: '53'
+      hash_key: '["lib/audio_glue/template.rb:53", nil, nil]'
+    details:
+      flog: complexity is 7.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:24
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '24'
+      hash_key: '["lib/audio_glue/template_loader.rb:24", nil, nil]'
+    details:
+      flog: complexity is 4.1
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/snippet_packet.rb:18
+      file_name: lib/audio_glue/snippet_packet.rb
+      line_number: '18'
+      hash_key: '["lib/audio_glue/snippet_packet.rb:18", nil, nil]'
+    details:
+      flog: complexity is 4.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:84
+      file_name: lib/audio_glue/template.rb
+      line_number: '84'
+      hash_key: '["lib/audio_glue/template.rb:84", nil, nil]'
+    details:
+      flog: complexity is 2.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/snippet.rb:16
+      file_name: lib/audio_glue/snippet.rb
+      line_number: '16'
+      hash_key: '["lib/audio_glue/snippet.rb:16", nil, nil]'
+    details:
+      flog: complexity is 3.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:35
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '35'
+      hash_key: '["lib/audio_glue/template_loader.rb:35", nil, nil]'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/adapters/base_adapter.rb:20
+      file_name: lib/audio_glue/adapters/base_adapter.rb
+      line_number: '20'
+      hash_key: '["lib/audio_glue/adapters/base_adapter.rb:20", nil, nil]'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template/head_context.rb:35
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '35'
+      hash_key: '["lib/audio_glue/template/head_context.rb:35", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/builder.rb:15
+      file_name: lib/audio_glue/builder.rb
+      line_number: '15'
+      hash_key: '["lib/audio_glue/builder.rb:15", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:125
+      file_name: lib/audio_glue/template.rb
+      line_number: '125'
+      hash_key: '["lib/audio_glue/template.rb:125", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:135
+      file_name: lib/audio_glue/template.rb
+      line_number: '135'
+      hash_key: '["lib/audio_glue/template.rb:135", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:54
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '54'
+      hash_key: '["lib/audio_glue/template_loader.rb:54", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/snippet.rb:27
+      file_name: lib/audio_glue/snippet.rb
+      line_number: '27'
+      hash_key: '["lib/audio_glue/snippet.rb:27", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:43
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '43'
+      hash_key: '["lib/audio_glue/template_loader.rb:43", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template/head_context.rb:17
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '17'
+      hash_key: '["lib/audio_glue/template/head_context.rb:17", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template/head_context.rb:8
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '8'
+      hash_key: '["lib/audio_glue/template/head_context.rb:8", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template/head_context.rb:26
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '26'
+      hash_key: '["lib/audio_glue/template/head_context.rb:26", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:39
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '39'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:39", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb:63
+      file_name: lib/audio_glue/template.rb
+      line_number: '63'
+      hash_key: '["lib/audio_glue/template.rb:63", nil, nil]'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/builder.rb
+      file_name: lib/audio_glue/builder.rb
+      line_number: 
+      hash_key: '["lib/audio_glue/builder.rb", nil, nil]'
+    details:
+      reek: found 3 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: 
+      hash_key: '["lib/audio_glue/template_loader.rb", nil, nil]'
+    details:
+      reek: found 2 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/audio_glue/template.rb
+      file_name: lib/audio_glue/template.rb
+      line_number: 
+      hash_key: '["lib/audio_glue/template.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  classes:
+  - location:
+      class_name: main
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", nil]'
+    details:
+      flog: complexity is 13.2
+  - location:
+      class_name: Template
+      method_name: 
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", "Template", nil]'
+    details:
+      flog: average complexity is 7.9
+      reek: found 1 code smells
+      saikuro: average complexity is 1.8
+  - location:
+      class_name: Builder
+      method_name: 
+      file_path: lib/audio_glue/builder.rb:29
+      file_name: lib/audio_glue/builder.rb
+      line_number: '29'
+      hash_key: '["lib/audio_glue/builder.rb:29", "Builder", nil]'
+    details:
+      flog: average complexity is 6.4
+      reek: found 3 code smells
+      saikuro: average complexity is 2.5
+  - location:
+      class_name: inspect
+      method_name: 
+      file_path: lib/audio_glue/template.rb:71
+      file_name: lib/audio_glue/template.rb
+      line_number: '71'
+      hash_key: '["lib/audio_glue/template.rb:71", "inspect", nil]'
+    details:
+      flog: complexity is 8.3
+  - location:
+      class_name: TemplateLoader
+      method_name: 
+      file_path: lib/audio_glue/template_loader.rb:64
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '64'
+      hash_key: '["lib/audio_glue/template_loader.rb:64", "TemplateLoader", nil]'
+    details:
+      flog: average complexity is 5.6
+      reek: found 2 code smells
+      saikuro: average complexity is 1.8
+  - location:
+      class_name: head
+      method_name: 
+      file_path: lib/audio_glue/template.rb:53
+      file_name: lib/audio_glue/template.rb
+      line_number: '53'
+      hash_key: '["lib/audio_glue/template.rb:53", "head", nil]'
+    details:
+      flog: complexity is 7.4
+  - location:
+      class_name: PlainSoxAdapter
+      method_name: 
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:8
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '8'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:8", "PlainSoxAdapter",
+        nil]'
+    details:
+      flog: average complexity is 5.2
+      saikuro: average complexity is 2.0
+  - location:
+      class_name: SnippetPacket
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "SnippetPacket", nil]'
+    details:
+      flog: average complexity is 4.5
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Snippet
+      method_name: 
+      file_path: lib/audio_glue/snippet.rb:16
+      file_name: lib/audio_glue/snippet.rb
+      line_number: '16'
+      hash_key: '["lib/audio_glue/snippet.rb:16", "Snippet", nil]'
+    details:
+      flog: average complexity is 1.7
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: BaseAdapter
+      method_name: 
+      file_path: lib/audio_glue/adapters/base_adapter.rb:20
+      file_name: lib/audio_glue/adapters/base_adapter.rb
+      line_number: '20'
+      hash_key: '["lib/audio_glue/adapters/base_adapter.rb:20", "BaseAdapter", nil]'
+    details:
+      flog: average complexity is 1.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HeadContext
+      method_name: 
+      file_path: lib/audio_glue/template/head_context.rb:17
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '17'
+      hash_key: '["lib/audio_glue/template/head_context.rb:17", "HeadContext", nil]'
+    details:
+      flog: average complexity is 1.0
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: body
+      method_name: 
+      file_path: lib/audio_glue/template.rb:63
+      file_name: lib/audio_glue/template.rb
+      line_number: '63'
+      hash_key: '["lib/audio_glue/template.rb:63", "body", nil]'
+    details:
+      flog: complexity is 1.0
+  methods:
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#load_template_from_file
+      file_path: lib/audio_glue/template_loader.rb:64
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '64'
+      hash_key: '["lib/audio_glue/template_loader.rb:64", "TemplateLoader", "TemplateLoader#load_template_from_file"]'
+      simple_method_name: '#load_template_from_file'
+    details:
+      flog: complexity is 21.3
+      reek: found 2 code smells
+      saikuro: complexity is 5.0
+  - location:
+      class_name: Template
+      method_name: Template#inspect
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", "Template", "Template#inspect"]'
+      simple_method_name: '#inspect'
+    details:
+      flog: complexity is 18.3
+      reek: found 1 code smells
+      saikuro: complexity is 4.0
+  - location:
+      class_name: Builder
+      method_name: Builder#build
+      file_path: lib/audio_glue/builder.rb:29
+      file_name: lib/audio_glue/builder.rb
+      line_number: '29'
+      hash_key: '["lib/audio_glue/builder.rb:29", "Builder", "Builder#build"]'
+      simple_method_name: '#build'
+    details:
+      flog: complexity is 11.8
+      reek: found 3 code smells
+      saikuro: complexity is 4.0
+  - location:
+      class_name: Template
+      method_name: Template#build_snippet_packet
+      file_path: lib/audio_glue/template.rb:93
+      file_name: lib/audio_glue/template.rb
+      line_number: '93'
+      hash_key: '["lib/audio_glue/template.rb:93", "Template", "Template#build_snippet_packet"]'
+      simple_method_name: '#build_snippet_packet'
+    details:
+      flog: complexity is 13.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: main
+      method_name: main#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", "main#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 13.2
+  - location:
+      class_name: PlainSoxAdapter
+      method_name: PlainSoxAdapter#build
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:8
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '8'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:8", "PlainSoxAdapter",
+        "PlainSoxAdapter#build"]'
+      simple_method_name: '#build'
+    details:
+      flog: complexity is 10.0
+      saikuro: complexity is 3.0
+  - location:
+      class_name: Template
+      method_name: Template#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Template", "Template#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 11.5
+  - location:
+      class_name: PlainSoxAdapter
+      method_name: PlainSoxAdapter#write
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:24
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '24'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:24", "PlainSoxAdapter",
+        "PlainSoxAdapter#write"]'
+      simple_method_name: '#write'
+    details:
+      flog: complexity is 8.0
+      saikuro: complexity is 2.0
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#initialize
+      file_path: lib/audio_glue/template_loader.rb:24
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '24'
+      hash_key: '["lib/audio_glue/template_loader.rb:24", "TemplateLoader", "TemplateLoader#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 4.1
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SnippetPacket
+      method_name: SnippetPacket#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "SnippetPacket", "SnippetPacket#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 5.0
+  - location:
+      class_name: SnippetPacket
+      method_name: SnippetPacket#initialize
+      file_path: lib/audio_glue/snippet_packet.rb:18
+      file_name: lib/audio_glue/snippet_packet.rb
+      line_number: '18'
+      hash_key: '["lib/audio_glue/snippet_packet.rb:18", "SnippetPacket", "SnippetPacket#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 4.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#initialize
+      file_path: lib/audio_glue/template.rb:84
+      file_name: lib/audio_glue/template.rb
+      line_number: '84'
+      hash_key: '["lib/audio_glue/template.rb:84", "Template", "Template#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 2.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "TemplateLoader", "TemplateLoader#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 4.0
+  - location:
+      class_name: Snippet
+      method_name: Snippet#initialize
+      file_path: lib/audio_glue/snippet.rb:16
+      file_name: lib/audio_glue/snippet.rb
+      line_number: '16'
+      hash_key: '["lib/audio_glue/snippet.rb:16", "Snippet", "Snippet#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 3.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#get
+      file_path: lib/audio_glue/template_loader.rb:35
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '35'
+      hash_key: '["lib/audio_glue/template_loader.rb:35", "TemplateLoader", "TemplateLoader#get"]'
+      simple_method_name: '#get'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: BaseAdapter
+      method_name: BaseAdapter#build
+      file_path: lib/audio_glue/adapters/base_adapter.rb:20
+      file_name: lib/audio_glue/adapters/base_adapter.rb
+      line_number: '20'
+      hash_key: '["lib/audio_glue/adapters/base_adapter.rb:20", "BaseAdapter", "BaseAdapter#build"]'
+      simple_method_name: '#build'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#self.inspect
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", "Template", "Template#self.inspect"]'
+      simple_method_name: '#self.inspect'
+    details:
+      saikuro: complexity is 3.0
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#absolute_path
+      file_path: lib/audio_glue/template_loader.rb:54
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '54'
+      hash_key: '["lib/audio_glue/template_loader.rb:54", "TemplateLoader", "TemplateLoader#absolute_path"]'
+      simple_method_name: '#absolute_path'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: PlainSoxAdapter
+      method_name: PlainSoxAdapter#gen_tmp_filename
+      file_path: lib/audio_glue/adapters/plain_sox_adapter.rb:39
+      file_name: lib/audio_glue/adapters/plain_sox_adapter.rb
+      line_number: '39'
+      hash_key: '["lib/audio_glue/adapters/plain_sox_adapter.rb:39", "PlainSoxAdapter",
+        "PlainSoxAdapter#gen_tmp_filename"]'
+      simple_method_name: '#gen_tmp_filename'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Builder
+      method_name: Builder#initialize
+      file_path: lib/audio_glue/builder.rb:15
+      file_name: lib/audio_glue/builder.rb
+      line_number: '15'
+      hash_key: '["lib/audio_glue/builder.rb:15", "Builder", "Builder#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: PlainSoxAdapter
+      method_name: PlainSoxAdapter#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "PlainSoxAdapter", "PlainSoxAdapter#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: TemplateLoader
+      method_name: TemplateLoader#reset_cache!
+      file_path: lib/audio_glue/template_loader.rb:43
+      file_name: lib/audio_glue/template_loader.rb
+      line_number: '43'
+      hash_key: '["lib/audio_glue/template_loader.rb:43", "TemplateLoader", "TemplateLoader#reset_cache!"]'
+      simple_method_name: '#reset_cache!'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Snippet
+      method_name: Snippet#-@
+      file_path: lib/audio_glue/snippet.rb:27
+      file_name: lib/audio_glue/snippet.rb
+      line_number: '27'
+      hash_key: '["lib/audio_glue/snippet.rb:27", "Snippet", "Snippet#-@"]'
+      simple_method_name: '#-@'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#url
+      file_path: lib/audio_glue/template.rb:135
+      file_name: lib/audio_glue/template.rb
+      line_number: '135'
+      hash_key: '["lib/audio_glue/template.rb:135", "Template", "Template#url"]'
+      simple_method_name: '#url'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#file
+      file_path: lib/audio_glue/template.rb:125
+      file_name: lib/audio_glue/template.rb
+      line_number: '125'
+      hash_key: '["lib/audio_glue/template.rb:125", "Template", "Template#file"]'
+      simple_method_name: '#file'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HeadContext
+      method_name: HeadContext#channels
+      file_path: lib/audio_glue/template/head_context.rb:35
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '35'
+      hash_key: '["lib/audio_glue/template/head_context.rb:35", "HeadContext", "HeadContext#channels"]'
+      simple_method_name: '#channels'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HeadContext
+      method_name: HeadContext#format
+      file_path: lib/audio_glue/template/head_context.rb:17
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '17'
+      hash_key: '["lib/audio_glue/template/head_context.rb:17", "HeadContext", "HeadContext#format"]'
+      simple_method_name: '#format'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HeadContext
+      method_name: HeadContext#initialize
+      file_path: lib/audio_glue/template/head_context.rb:8
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '8'
+      hash_key: '["lib/audio_glue/template/head_context.rb:8", "HeadContext", "HeadContext#initialize"]'
+      simple_method_name: '#initialize'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HeadContext
+      method_name: HeadContext#rate
+      file_path: lib/audio_glue/template/head_context.rb:26
+      file_name: lib/audio_glue/template/head_context.rb
+      line_number: '26'
+      hash_key: '["lib/audio_glue/template/head_context.rb:26", "HeadContext", "HeadContext#rate"]'
+      simple_method_name: '#rate'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: BaseAdapter
+      method_name: BaseAdapter#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "BaseAdapter", "BaseAdapter#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Snippet
+      method_name: Snippet#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Snippet", "Snippet#none"]'
+      simple_method_name: '#none'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#self.body
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", "Template", "Template#self.body"]'
+      simple_method_name: '#self.body'
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Template
+      method_name: Template#self.head
+      file_path: lib/audio_glue/template.rb:103
+      file_name: lib/audio_glue/template.rb
+      line_number: '103'
+      hash_key: '["lib/audio_glue/template.rb:103", "Template", "Template#self.head"]'
+      simple_method_name: '#self.head'
+    details:
+      saikuro: complexity is 1.0
