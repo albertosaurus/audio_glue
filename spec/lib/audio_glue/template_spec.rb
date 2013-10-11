@@ -74,7 +74,7 @@ describe AudioGlue::Template do
       snippet  = template.send(:file, '/path/in.mp3')
 
       snippet.type.should     == :file
-      snippet.location.should == '/path/in.mp3'
+      snippet.source.should == '/path/in.mp3'
     end
   end
 
@@ -84,7 +84,7 @@ describe AudioGlue::Template do
       snippet  = template.send(:url, 'http://s.com/sound.mp3')
 
       snippet.type.should     == :url
-      snippet.location.should == 'http://s.com/sound.mp3'
+      snippet.source.should == 'http://s.com/sound.mp3'
     end
   end
 end

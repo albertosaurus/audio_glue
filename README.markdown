@@ -136,7 +136,7 @@ A very simple adapter could look like this:
         unless snippet.type == :file
           raise(AudioGlue::Error, "Only file snippets are supported")
         end
-        snippets.location
+        snippets.source
       end
 
       # Build cat command
