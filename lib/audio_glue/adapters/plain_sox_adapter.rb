@@ -4,10 +4,12 @@ module AudioGlue
   class PlainSoxAdapter < BaseAdapter
     # Write output to temporary file and read data from it and remove it.
     #
+    # @param snippet_packet [AudioGlue::SnippetPacket]
+    #
     # @return [String] audio data as a binary string.
-    def build
-      tmp_file = gen_tmp_filename(@snippet_packet.format)
-      write(tmp_file)
+    def build(snippet_packet)
+      tmp_file = gen_tmp_filename(snippet_packet.format)
+      write(snippet_packet, tmp_file)
       File.binread(tmp_file)
     rescue ::Sox::Error => err
       raise(::AudioGlue::BuildError, err.message)
@@ -19,14 +21,15 @@ module AudioGlue
     # Build an output file using the snippet packet and write it to a file.
     #
     # @param output_file [String] path to a file
+    # @param snippet_packet [AudioGlue::SnippetPacket]
     #
     # @return [void]
-    def write(output_file)
-      input_files = @snippet_packet.snippets.map { |snippet| snippet.source}
+    def write(snippet_packet, output_file)
+      input_files = snippet_packet.snippets.map { |snippet| snippet.source}
       combiner    = Sox::Combiner.new( input_files,
                                        :combine  => :concatenate,
-                                       :rate     => @snippet_packet.rate,
-                                       :channels => @snippet_packet.channels )
+                                       :rate     => snippet_packet.rate,
+                                       :channels => snippet_packet.channels )
       combiner.write(output_file)
     end
     private :write

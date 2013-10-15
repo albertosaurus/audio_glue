@@ -129,10 +129,10 @@ A very simple adapter could look like this:
   # Doesn't handle rate and channels.
   class SimpleAdapter < AudioGlue::BaseAdapter
     # Only this method is required to be implemented.
-    def build
+    def build(snippet_packet)
       # Extract file paths from snippets.
       # Ensure only :file snippets are present.
-      file_paths = @snippet_packet.snippets.map do |snippet|
+      file_paths = snippet_packet.snippets.map do |snippet|
         unless snippet.type == :file
           raise(AudioGlue::Error, "Only file snippets are supported")
         end

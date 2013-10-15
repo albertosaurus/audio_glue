@@ -6,10 +6,9 @@ describe AudioGlue::PlainSoxAdapter do
 
   describe '#build' do
     it 'should catch Sox::Error and raise AudioGlue::BuildError' do
-      adapter.snippet_packet = snippet_packet
       adapter.should_receive(:write).and_raise(::Sox::Error)
 
-      expect { adapter.build }.
+      expect { adapter.build(snippet_packet) }.
         to raise_error(::AudioGlue::BuildError)
     end
   end
