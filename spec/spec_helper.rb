@@ -45,16 +45,4 @@ RSpec.configure do |config|
   def template_fixture(filename)
     File.join(TEMPLATE_FIXTURES_PATH, filename)
   end
-
-  def sound_fixture(filename)
-    File.join(SOUND_FIXTURES_PATH, filename)
-  end
-
-  def input_fixture(filename)
-    sound_fixture(File.join('input', filename))
-  end
-
-  def output_fixture(filename)
-    sound_fixture(File.join('output', filename))
-  end
 end

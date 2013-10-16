@@ -2,31 +2,17 @@
 
 Audio template engine (aka ERB/HAML for audio).
 
-
-## Dependencies
-
-* SoX (for sox adapter)
-
-### Debian / Ubuntu
-
-```bash
-apt-get install sox
-```
-
-### Mac
-
-```bash
-# Note: flac must be installed before sox so it will link during compilation.
-# One of the following:
-sudo port install flac sox
-brew install flac sox
-```
-
 ## Usage
 
 An example:
 
 ```ruby
+  require 'audio_glue'
+
+  # We need to use one of adapters, this one comes from audio_glue-sox_adapter gem
+  require 'audio_glue/sox_adapter'
+
+
   # Create a template class:
   class HelloWorldTemplate < AudioGlue::Template
     # Specify characteristics of an output audio file:
