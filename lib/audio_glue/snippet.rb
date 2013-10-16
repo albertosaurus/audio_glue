@@ -15,7 +15,7 @@ module AudioGlue
     # @param source [String] Can be location, URL, or whatever depending on type
     # @param snippet_packet [AudioGlue::SnippetPacket] the snippet packet used
     #   to add the audio snippet to the packet when `-` unary method is called
-    # @params opts [Hash] any specific options which are supported by adapter
+    # @param opts [Hash] any specific options which are supported by adapter
     def initialize(type, source, snippet_packet, opts = {})
       @type           = type
       @source         = source
