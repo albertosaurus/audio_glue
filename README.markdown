@@ -9,13 +9,14 @@ An example:
 ```ruby
   require 'audio_glue'
 
-  # We need to use one of adapters, this one comes from audio_glue-sox_adapter gem
+  # We need to use one of the adapters.
+  # This one comes from the audio_glue-sox_adapter gem:
   require 'audio_glue/sox_adapter'
 
 
   # Create a template class:
   class HelloWorldTemplate < AudioGlue::Template
-    # Specify characteristics of an output audio file:
+    # Specify the characteristics of an output audio file:
     head do
       format :mp3
       rate 44100
@@ -54,8 +55,9 @@ In Ruby terms, it's a subclass of `AudioGlue::Template`.
 
 #### Glue templates
 
-In the example above, the template inherits from `AudioGlue::Template`. But you can also
-store templates in `.glue` files. For example `/path/to/templates/hello_world.glue`:
+In the example above, the template inherits from `AudioGlue::Template`.
+But you can also store templates in `.glue` files.
+For example `/path/to/templates/hello_world.glue`:
 
 ```ruby
 head {

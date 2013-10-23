@@ -11,7 +11,8 @@ module AudioGlue
   class Snippet
     attr_reader :type, :source, :snippet_packet, :opts
 
-    # @param type [Symbol] :file, :url or anything else that can be handled by adapter
+    # @param type [Symbol] :file, :url or anything else that can be handled by
+    #                      the adapter
     # @param source [String] Can be location, URL, or whatever depending on type
     # @param snippet_packet [AudioGlue::SnippetPacket] the snippet packet used
     #   to add the audio snippet to the packet when `-` unary method is called
