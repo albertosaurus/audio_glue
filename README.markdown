@@ -2,34 +2,21 @@
 
 Audio template engine (aka ERB/HAML for audio).
 
-
-## Dependencies
-
-* SoX (for sox adapter)
-
-### Debian / Ubuntu
-
-```bash
-apt-get install sox
-```
-
-### Mac
-
-```bash
-# Note: flac must be installed before sox so it will link during compilation.
-# One of the following:
-sudo port install flac sox
-brew install flac sox
-```
-
 ## Usage
 
 An example:
 
 ```ruby
+  require 'audio_glue'
+
+  # We need to use one of the adapters.
+  # This one comes from the audio_glue-sox_adapter gem:
+  require 'audio_glue/sox_adapter'
+
+
   # Create a template class:
   class HelloWorldTemplate < AudioGlue::Template
-    # Specify characteristics of an output audio file:
+    # Specify the characteristics of an output audio file:
     head do
       format :mp3
       rate 44100
@@ -68,8 +55,9 @@ In Ruby terms, it's a subclass of `AudioGlue::Template`.
 
 #### Glue templates
 
-In the example above, the template inherits from `AudioGlue::Template`. But you can also
-store templates in `.glue` files. For example `/path/to/templates/hello_world.glue`:
+In the example above, the template inherits from `AudioGlue::Template`.
+But you can also store templates in `.glue` files.
+For example `/path/to/templates/hello_world.glue`:
 
 ```ruby
 head {
@@ -129,14 +117,14 @@ A very simple adapter could look like this:
   # Doesn't handle rate and channels.
   class SimpleAdapter < AudioGlue::BaseAdapter
     # Only this method is required to be implemented.
-    def build
+    def build(snippet_packet)
       # Extract file paths from snippets.
       # Ensure only :file snippets are present.
-      file_paths = @snippet_packet.snippets.map do |snippet|
+      file_paths = snippet_packet.snippets.map do |snippet|
         unless snippet.type == :file
           raise(AudioGlue::Error, "Only file snippets are supported")
         end
-        snippets.location
+        snippets.source
       end
 
       # Build cat command

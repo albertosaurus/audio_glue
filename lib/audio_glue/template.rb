@@ -123,7 +123,7 @@ module AudioGlue
     #
     # @return [AudioGlue::Snippet]
     def file(file_path)
-      Snippet.new(:file, file_path, @__packet__)
+      create_snippet(:file, file_path)
     end
     private :file
 
@@ -133,8 +133,20 @@ module AudioGlue
     #
     # @return [AudioGlue::Snippet]
     def url(remote_url)
-      Snippet.new(:url, remote_url, @__packet__)
+      create_snippet(:url, remote_url)
     end
     private :url
+
+    # Create snippet.
+    #
+    # @param type [Symbol] snippet type
+    # @param source [String]
+    # @param opts [Hash] any options supported by adapter
+    #
+    # @return [AudioGlue::Snippet]
+    def create_snippet(type, source, opts = {})
+      Snippet.new(type, source, @__packet__, opts)
+    end
+    private :create_snippet
   end
 end

@@ -34,8 +34,7 @@ module AudioGlue
       packet.rate     = rate     if rate
       packet.channels = channels if channels
 
-      @adapter.snippet_packet = packet
-      @adapter.build
+      @adapter.build(packet)
     end
   end
 end

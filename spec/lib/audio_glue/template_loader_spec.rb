@@ -36,8 +36,10 @@ describe AudioGlue::TemplateLoader do
       context 'the template has an invalid method' do
         it 'should raise LoadTemplateError' do
           expect { loader.get('global_no_method') }.
-            to raise_error( AudioGlue::LoadTemplateError,
-                            /undefined local variable or method `alien_is_here'/ )
+            to raise_error(
+                 AudioGlue::LoadTemplateError,
+                 /undefined local variable or method `alien_is_here'/
+               )
         end
       end
 

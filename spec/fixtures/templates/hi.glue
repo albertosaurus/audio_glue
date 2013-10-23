@@ -5,13 +5,11 @@ head {
 }
 
 body {
-  - input('hi.wav')
-  - input('hi.wav')
+  - file('hi')
 
   if @smalltalk
-    - input('how_are_you_doing.wav')
-    - input('fine_thanks.wav')
+    - file('how_are_you')
   end
 
-  - input('bye_bye.wav')
+  - file('bye')
 }
