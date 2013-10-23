@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["TMX Credit", "Potapov Sergey"]
-  s.date = "2013-10-16"
+  s.date = "2013-10-23"
   s.description = "Tool to assemble audio files from templates"
   s.email = ["rubygems@tmxcredit.com", "blake131313@gmail.com"]
   s.extra_rdoc_files = [
