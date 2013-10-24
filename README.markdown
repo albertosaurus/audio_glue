@@ -1,5 +1,7 @@
 # AudioGlue
 
+[![Build Status](https://travis-ci.org/TMXCredit/audio_glue.png?branch=master)](https://travis-ci.org/TMXCredit/audio_glue)
+
 Audio template engine (aka ERB/HAML for audio).
 
 ## Usage
