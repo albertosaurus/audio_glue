@@ -28,8 +28,7 @@ describe AudioGlue::TemplateLoader do
       context 'the template has invalid ruby syntax' do
         it 'should raise LoadTemplateError' do
           expect { loader.get('syntax_error') }.
-            to raise_error( AudioGlue::LoadTemplateError,
-                            %r{syntax error, unexpected end-of-input} )
+            to raise_error( AudioGlue::LoadTemplateError, %r{syntax error} )
         end
       end
 
