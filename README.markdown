@@ -103,6 +103,12 @@ audio. There a few types of snippets:
 To make a snippet be added to the output it should have a dash prefix (`-`).
 
 
+### Rails integration
+
+To integrate AudioGlue with rails please use
+[rails-audio_glue](https://github.com/TMXCredit/rails-audio_glue) gem.
+
+
 ### Custom adapters
 
 You may want to create your own adapter to concatenate audio files, if you
